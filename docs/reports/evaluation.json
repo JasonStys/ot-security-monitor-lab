@@ -1,0 +1,312 @@
+{
+  "accepted_source_revision": "3169805dcf239b1f623fa53c039a5c1d588257d9",
+  "validation_run_url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278",
+  "job_url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981632",
+  "author": "Jason Stys",
+  "cases": 27,
+  "matched": 27,
+  "policy_sha256": "a12c0eff4abbe6be3f8bb729be5d54653180a1a04bfd152ec640fb817065882b",
+  "python": "3.14.8",
+  "results": [
+    {
+      "actual": {},
+      "capture_records": 5,
+      "case": "normal-poll",
+      "expected": {},
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {},
+      "capture_records": 8,
+      "case": "segmented-poll",
+      "expected": {},
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {},
+      "capture_records": 7,
+      "case": "header-intact-segmented-poll",
+      "expected": {},
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {},
+      "capture_records": 5,
+      "case": "coalesced-polls",
+      "expected": {},
+      "frames": 4,
+      "matched": true
+    },
+    {
+      "actual": {},
+      "capture_records": 6,
+      "case": "verified-retransmission",
+      "expected": {},
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {},
+      "capture_records": 5,
+      "case": "vlan-poll",
+      "expected": {},
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {},
+      "capture_records": 5,
+      "case": "approved-write-6",
+      "expected": {},
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {},
+      "capture_records": 5,
+      "case": "approved-write-16",
+      "expected": {},
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "outside_maintenance": 1,
+        "unauthorized_write": 1,
+        "unexpected_peer": 1
+      },
+      "capture_records": 5,
+      "case": "unknown-writer",
+      "expected": {
+        "outside_maintenance": 1,
+        "unauthorized_write": 1,
+        "unexpected_peer": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "readonly_write": 1
+      },
+      "capture_records": 5,
+      "case": "readonly-write",
+      "expected": {
+        "readonly_write": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "outside_maintenance": 1
+      },
+      "capture_records": 5,
+      "case": "outside-window",
+      "expected": {
+        "outside_maintenance": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "process_envelope": 1
+      },
+      "capture_records": 5,
+      "case": "approved-writer-unsafe-value",
+      "expected": {
+        "process_envelope": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "process_envelope": 1
+      },
+      "capture_records": 5,
+      "case": "sensor-envelope",
+      "expected": {
+        "process_envelope": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "register_outside_baseline": 1
+      },
+      "capture_records": 5,
+      "case": "unknown-registers",
+      "expected": {
+        "register_outside_baseline": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "unknown_asset": 1
+      },
+      "capture_records": 5,
+      "case": "unknown-asset",
+      "expected": {
+        "unknown_asset": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "rate_burst": 1
+      },
+      "capture_records": 11,
+      "case": "poll-burst",
+      "expected": {
+        "rate_burst": 1
+      },
+      "frames": 8,
+      "matched": true
+    },
+    {
+      "actual": {
+        "response_mismatch": 1
+      },
+      "capture_records": 6,
+      "case": "mismatch-then-valid",
+      "expected": {
+        "response_mismatch": 1
+      },
+      "frames": 3,
+      "matched": true
+    },
+    {
+      "actual": {
+        "device_exception": 1
+      },
+      "capture_records": 5,
+      "case": "device-exception",
+      "expected": {
+        "device_exception": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "unexpected_response": 1
+      },
+      "capture_records": 4,
+      "case": "orphan-response",
+      "expected": {
+        "unexpected_response": 1
+      },
+      "frames": 1,
+      "matched": true
+    },
+    {
+      "actual": {
+        "transaction_reuse": 1
+      },
+      "capture_records": 5,
+      "case": "transaction-reuse",
+      "expected": {
+        "transaction_reuse": 1
+      },
+      "frames": 3,
+      "matched": true
+    },
+    {
+      "actual": {
+        "observed_timeout": 1,
+        "unexpected_response": 1
+      },
+      "capture_records": 5,
+      "case": "observed-timeout",
+      "expected": {
+        "observed_timeout": 1,
+        "unexpected_response": 1
+      },
+      "frames": 2,
+      "matched": true
+    },
+    {
+      "actual": {
+        "eof_unresolved": 1
+      },
+      "capture_records": 4,
+      "case": "capture-ended-request",
+      "expected": {
+        "eof_unresolved": 1
+      },
+      "frames": 1,
+      "matched": true
+    },
+    {
+      "actual": {
+        "capture_gap": 1
+      },
+      "capture_records": 4,
+      "case": "partial-adu-at-eof",
+      "expected": {
+        "capture_gap": 1
+      },
+      "frames": 0,
+      "matched": true
+    },
+    {
+      "actual": {
+        "capture_gap": 1
+      },
+      "capture_records": 6,
+      "case": "tcp-gap",
+      "expected": {
+        "capture_gap": 1
+      },
+      "frames": 0,
+      "matched": true
+    },
+    {
+      "actual": {
+        "malformed_adu": 1
+      },
+      "capture_records": 4,
+      "case": "malformed-pdu",
+      "expected": {
+        "malformed_adu": 1
+      },
+      "frames": 0,
+      "matched": true
+    },
+    {
+      "actual": {
+        "unsupported_function": 1
+      },
+      "capture_records": 4,
+      "case": "unsupported-identification",
+      "expected": {
+        "unsupported_function": 1
+      },
+      "frames": 1,
+      "matched": true
+    },
+    {
+      "actual": {
+        "capture_gap": 1
+      },
+      "capture_records": 1,
+      "case": "missing-handshake",
+      "expected": {
+        "capture_gap": 1
+      },
+      "frames": 0,
+      "matched": true
+    }
+  ],
+  "scope": "independent synthetic OT capture-oracle evaluation",
+  "sqlite_replay_idempotent": true
+}

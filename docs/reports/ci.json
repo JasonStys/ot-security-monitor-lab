@@ -1,0 +1,129 @@
+{
+  "author": "Jason Stys",
+  "scope": "immutable accepted-source CI snapshot, latest doc commit checked separately",
+  "accepted_source_revision": "3169805dcf239b1f623fa53c039a5c1d588257d9",
+  "validate": {
+    "id": 38615665278,
+    "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 116029981241,
+        "name": "Independent offline TShark golden vectors",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981241"
+      },
+      {
+        "id": 116029981632,
+        "name": "Passive OT + evidence / ubuntu-24.04 / 3.14",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981632"
+      },
+      {
+        "id": 116029981837,
+        "name": "Passive OT + evidence / windows-latest / 3.14",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981837"
+      },
+      {
+        "id": 116029981891,
+        "name": "Passive OT + evidence / ubuntu-24.04 / 3.12",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981891"
+      },
+      {
+        "id": 116029981893,
+        "name": "Locked graph + secrets + workflows",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981893"
+      },
+      {
+        "id": 116029981928,
+        "name": "Passive OT + evidence / macos-15-intel / 3.14",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981928"
+      }
+    ]
+  },
+  "codeql": {
+    "id": 38615665327,
+    "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665327",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 116029981909,
+        "name": "CodeQL / Python",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "test_results": {
+    "linux312": {
+      "passed": 130,
+      "skipped": 0
+    },
+    "linux314": {
+      "passed": 130,
+      "skipped": 0
+    },
+    "windows314": {
+      "passed": 130,
+      "skipped": 0
+    },
+    "macos314": {
+      "passed": 130,
+      "skipped": 0
+    }
+  },
+  "runtime_coverage": {
+    "statements": 553,
+    "statement_reference_environment": "linux314",
+    "statement_counts_by_python": {
+      "3.12": 556,
+      "3.14": 553
+    },
+    "branches": 164,
+    "combined_percent": 100,
+    "modules": 8,
+    "exclusions": 0
+  },
+  "synthetic_scenario_oracles": {
+    "cases": 27,
+    "matched": 27
+  },
+  "independent_native": {
+    "full_agreement_cases": 7,
+    "full_agreement_adus": 16,
+    "partial_header_probe_native_complete": false,
+    "partial_header_lab_messages": 2,
+    "partial_header_native_messages": 1,
+    "limitation_explicitly_documented": true
+  },
+  "locked_python_graph_known_vulnerabilities": 0,
+  "open_codeql_alerts": 0,
+  "repository_actions_artifacts": 0,
+  "repository_actions_caches": 0,
+  "corrections": [
+    {
+      "run_url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38614854211",
+      "cause": "Native TShark 4.2.2 checks eight initial bytes before MBAP reassembly; arbitrary-header fixture exceeded the selected oracle's coverage.",
+      "resolution": "Retained all strict split-header application tests, added header-intact native segmentation fixture, recorded original split-header native compatibility probe explicitly.",
+      "fix_revision": "3169805dcf239b1f623fa53c039a5c1d588257d9",
+      "failed_history_preserved": true
+    }
+  ],
+  "browser_qa": {
+    "synthetic_findings_visible": 3,
+    "scripts": 0,
+    "external_media": 0,
+    "referrer_policy": "no-referrer",
+    "temporary_preview_stopped": true
+  },
+  "limits": [
+    "offline passive lab, not a production IDS",
+    "native comparison covers selected fields/cases, not all segmentation",
+    "IP labels and hashes do not authenticate peers",
+    "no physical-process safety or compliance verdict",
+    "real captures/results must remain private"
+  ]
+}

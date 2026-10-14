@@ -4,27 +4,27 @@
 # variable: BEGIN — line 36
 # variable: END — line 36
 # variable: SPECIAL — line 37
-# definition: purpose — line 51
-# parameter: name — line 51
-# variable: text — line 55
-# variable: lines — line 60
-# variable: index — line 61
-# variable: line — line 61
-# variable: description — line 63
-# variable: continuation — line 65
-# variable: description — line 71
-# definition: main — line 76
-# variable: parser — line 78
-# variable: args — line 80
-# variable: names — line 81
-# variable: rows — line 89
-# variable: name — line 90
-# variable: label — line 91
-# variable: path — line 93
-# variable: original — line 94
-# variable: end — line 95
-# variable: start — line 95
-# variable: expected — line 96
+# definition: purpose — line 52
+# parameter: name — line 52
+# variable: text — line 56
+# variable: lines — line 61
+# variable: index — line 62
+# variable: line — line 62
+# variable: description — line 64
+# variable: continuation — line 66
+# variable: description — line 72
+# definition: main — line 77
+# variable: parser — line 79
+# variable: args — line 81
+# variable: names — line 82
+# variable: rows — line 90
+# variable: name — line 91
+# variable: label — line 92
+# variable: path — line 94
+# variable: original — line 95
+# variable: end — line 96
+# variable: start — line 96
+# variable: expected — line 97
 # END CODE MAP
 
 import argparse
@@ -44,6 +44,7 @@ SPECIAL = {
     "docs/reports/ci.json": "Actual immutable accepted-source CI snapshot.",
     "docs/reports/evaluation.json": "Actual independent synthetic scenario detection/capture-integrity outcomes.",
     "docs/reports/native.json": "Actual independent TShark dissection of synthetic segmented Modbus traffic.",
+    "docs/reports/example.html": "Generated inert public synthetic analyst report; no real capture data.",
     "docs/reports/benchmark.json": "Measured bounded capture analysis and Python allocation peak.",
 }
 

@@ -1,0 +1,15 @@
+{
+  "accepted_source_revision": "3169805dcf239b1f623fa53c039a5c1d588257d9",
+  "validation_run_url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278",
+  "job_url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/38615665278/job/116029981632",
+  "author": "Jason Stys",
+  "capture_bytes": 165234,
+  "capture_packets": 2003,
+  "decoded_adus": 2000,
+  "matched_responses": 1000,
+  "median_ms": 188.05329,
+  "python": "3.14.8",
+  "python_peak_bytes": 4116969,
+  "samples": 15,
+  "scope": "synthetic offline 1000 Modbus transaction analysis"
+}

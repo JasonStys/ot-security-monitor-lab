@@ -55,6 +55,8 @@ All example captures are generated **in memory** from public documentation-range
 
 Every authored source has purpose/function/class descriptions and CI-checked exact physical definition/parameter/variable maps (Python AST; SQL/workflow lexical indexes). The complete file guide below covers the exact tracked set, including each code, test, workflow, documentation and report file.
 
+Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthetic scenario outcomes and 16 independently dissected wire-vector ADUs. [Actual results](docs/validation.md) disclose the separate older TShark partial-header limitation. [Download/inspect the inert synthetic HTML report](docs/reports/example.html); no hosted site or real plant data is included.
+
 ## Complete file guide
 
 <!-- BEGIN FILE GUIDE -->
@@ -72,7 +74,13 @@ Every authored source has purpose/function/class descriptions and CI-checked exa
 | [docs/contracts.md](docs/contracts.md) | Input, state and evidence contracts. |
 | [docs/detections.md](docs/detections.md) | Detection catalog and interpretation. |
 | [docs/performance.md](docs/performance.md) | Complexity and benchmark methodology. |
+| [docs/reports/benchmark.json](docs/reports/benchmark.json) | Measured bounded capture analysis and Python allocation peak. |
+| [docs/reports/ci.json](docs/reports/ci.json) | Actual immutable accepted-source CI snapshot. |
+| [docs/reports/evaluation.json](docs/reports/evaluation.json) | Actual independent synthetic scenario detection/capture-integrity outcomes. |
+| [docs/reports/example.html](docs/reports/example.html) | Generated inert public synthetic analyst report; no real capture data. |
+| [docs/reports/native.json](docs/reports/native.json) | Actual independent TShark dissection of synthetic segmented Modbus traffic. |
 | [docs/research.md](docs/research.md) | Primary-source research. |
+| [docs/review.md](docs/review.md) | Implementation review and debugging record. |
 | [docs/runbook.md](docs/runbook.md) | Operational review and release runbook. |
 | [docs/security.md](docs/security.md) | Security, safety and privacy boundaries. |
 | [docs/testing.md](docs/testing.md) | Test strategy and acceptance plan. |

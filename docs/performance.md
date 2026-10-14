@@ -9,3 +9,5 @@ Pending expiration scans at most T<=256 per segment: O(P*T), not falsely claimed
 Evidence memory O(B+A+findings+bounded stream/pending/rate state); <=10000 decoded frames/findings; JSON <=16 MiB. SQLite inserts/findings are transactional and indexed by rule/severity; identity replay does not create duplicates. File read/record/state caps bound work but do not promise fixed RSS or resistance against every OS-level resource exhaustion.
 
 scripts/benchmark.py warms up then runs 15 analyses of 1000 synthetic read/response pairs (2003 packets, 2000 ADUs). Median time and Python tracemalloc peak are recorded after actual CI. Native allocations/SQLite/disk export are not included; this is not a line-rate live sensor throughput claim or arbitrary latency gate.
+
+Accepted Ubuntu/Python 3.14.8 result: median 188.053 ms, Python peak 4,116,969 bytes, 165,234-byte capture, all 1000 responses correlated. These are that runner/sample measurements only; see the immutable [report](reports/benchmark.json).
