@@ -1,0 +1,65 @@
+# Jason Stys: security-extended Python analysis; explicitly disable trap/dependency caches and database uploads.
+# BEGIN CODE MAP (generated; python scripts/code_map.py)
+# parameter: name — line 35
+# parameter: on — line 36
+# parameter: push — line 37
+# parameter: branches — line 38
+# parameter: pull_request — line 39
+# parameter: workflow_dispatch — line 40
+# parameter: permissions — line 41
+# parameter: contents — line 42
+# parameter: jobs — line 43
+# parameter: analyze — line 44
+# parameter: name — line 45
+# parameter: runs-on — line 46
+# parameter: timeout-minutes — line 47
+# parameter: permissions — line 48
+# parameter: contents — line 49
+# parameter: actions — line 50
+# parameter: security-events — line 51
+# parameter: steps — line 52
+# parameter: uses — line 53
+# parameter: with — line 54
+# parameter: persist-credentials — line 55
+# parameter: uses — line 56
+# parameter: with — line 57
+# parameter: languages — line 58
+# parameter: queries — line 59
+# parameter: build-mode — line 60
+# parameter: trap-caching — line 61
+# parameter: dependency-caching — line 62
+# parameter: uses — line 63
+# parameter: with — line 64
+# parameter: upload-database — line 65
+# END CODE MAP
+name: CodeQL
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analyze:
+    name: CodeQL / Python
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@24c54180a607b1449ed407dd24f251e4e9147c8d # v4
+        with:
+          languages: python
+          queries: security-extended
+          build-mode: none
+          trap-caching: false
+          dependency-caching: false
+      - uses: github/codeql-action/analyze@24c54180a607b1449ed407dd24f251e4e9147c8d # v4
+        with:
+          upload-database: false

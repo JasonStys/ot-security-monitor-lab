@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "site": "synthetic-water-treatment",
+  "service_port": 502,
+  "response_timeout_ms": 1000,
+  "rate_window_ms": 1000,
+  "rate_limit": 3,
+  "assets": [
+    {
+      "name": "pump-skid",
+      "ip": "192.0.2.10",
+      "unit": 1,
+      "readers": [
+        "192.0.2.30"
+      ],
+      "writers": [
+        "192.0.2.20"
+      ],
+      "registers": [
+        {
+          "start": 100,
+          "end": 103,
+          "writable": false,
+          "minimum": 0,
+          "maximum": 1000
+        },
+        {
+          "start": 200,
+          "end": 203,
+          "writable": true,
+          "minimum": 0,
+          "maximum": 1000
+        }
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "asset": "pump-skid",
+      "client": "192.0.2.20",
+      "start_ms": 1700000000000,
+      "end_ms": 1700000005000
+    }
+  ]
+}

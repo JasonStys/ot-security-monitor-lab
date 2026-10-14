@@ -1,0 +1,159 @@
+# Jason Stys: cross-platform passive monitoring, independent offline TShark and audited tools; zero artifacts/caches.
+# BEGIN CODE MAP (generated; python scripts/code_map.py)
+# parameter: name — line 81
+# parameter: on — line 82
+# parameter: push — line 83
+# parameter: branches — line 84
+# parameter: pull_request — line 85
+# parameter: workflow_dispatch — line 86
+# parameter: permissions — line 87
+# parameter: contents — line 88
+# parameter: concurrency — line 89
+# parameter: group — line 90
+# parameter: cancel-in-progress — line 91
+# parameter: jobs — line 92
+# parameter: quality — line 93
+# parameter: name — line 94
+# parameter: runs-on — line 95
+# parameter: timeout-minutes — line 96
+# parameter: strategy — line 97
+# parameter: fail-fast — line 98
+# parameter: matrix — line 99
+# parameter: include — line 100
+# parameter: env — line 105
+# parameter: PYTHONPATH — line 106
+# parameter: PIP_NO_CACHE_DIR — line 107
+# parameter: steps — line 108
+# parameter: uses — line 109
+# parameter: with — line 110
+# parameter: persist-credentials — line 111
+# parameter: uses — line 112
+# parameter: with — line 113
+# parameter: python-version — line 114
+# parameter: run — line 115
+# parameter: run — line 116
+# parameter: run — line 117
+# parameter: run — line 118
+# parameter: run — line 119
+# shell variable: cov — line 119
+# shell variable: report — line 119
+# parameter: run — line 120
+# parameter: run — line 121
+# parameter: run — line 122
+# parameter: run — line 123
+# parameter: run — line 124
+# parameter: native — line 125
+# parameter: name — line 126
+# parameter: runs-on — line 127
+# parameter: timeout-minutes — line 128
+# parameter: env — line 129
+# parameter: PYTHONPATH — line 130
+# parameter: steps — line 131
+# parameter: uses — line 132
+# parameter: with — line 133
+# parameter: persist-credentials — line 134
+# parameter: uses — line 135
+# parameter: with — line 136
+# parameter: python-version — line 137
+# parameter: run — line 138
+# parameter: run — line 139
+# parameter: security — line 140
+# parameter: name — line 141
+# parameter: runs-on — line 142
+# parameter: timeout-minutes — line 143
+# parameter: env — line 144
+# parameter: PIP_NO_CACHE_DIR — line 145
+# parameter: steps — line 146
+# parameter: uses — line 147
+# parameter: with — line 148
+# parameter: persist-credentials — line 149
+# parameter: fetch-depth — line 150
+# parameter: uses — line 151
+# parameter: with — line 152
+# parameter: python-version — line 153
+# parameter: run — line 154
+# parameter: run — line 155
+# parameter: run — line 156
+# parameter: run — line 157
+# parameter: run — line 158
+# parameter: run — line 159
+# END CODE MAP
+name: Validate
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  quality:
+    name: Passive OT + evidence / ${{ matrix.os }} / ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-24.04, python: '3.12'}
+          - {os: ubuntu-24.04, python: '3.14'}
+          - {os: windows-latest, python: '3.14'}
+          - {os: macos-15-intel, python: '3.14'}
+    env:
+      PYTHONPATH: .
+      PIP_NO_CACHE_DIR: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install --require-hashes -r requirements-dev.lock
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m mypy
+      - run: python -m pytest --cov=otmon --cov-report=term-missing:skip-covered
+      - run: python scripts/code_map.py --check
+      - run: python scripts/file_guide.py --check
+      - run: python scripts/validate_repo.py
+      - run: python scripts/evaluate.py
+      - run: python scripts/benchmark.py
+  native:
+    name: Independent offline TShark golden vectors
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.14'
+      - run: sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y tshark
+      - run: python scripts/native.py
+  security:
+    name: Locked graph + secrets + workflows
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PIP_NO_CACHE_DIR: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.14'
+      - run: python -m pip install --require-hashes -r requirements-dev.lock
+      - run: python -m pip_audit -r requirements-dev.lock --disable-pip --no-deps
+      - run: python scripts/scanners.py gitleaks
+      - run: python scripts/scanners.py actionlint
+      - run: .tools/gitleaks git . --redact --no-banner
+      - run: .tools/actionlint
