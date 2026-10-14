@@ -10,3 +10,5 @@ Reviewed 2026-10-14 by Jason Stys. No vendor-employer claims or compliance certi
 - [Python sqlite3](https://docs.python.org/3.14/library/sqlite3.html): parameter substitution and explicit transaction/connection close for bounded local evidence, not a server authentication/encryption service.
 
 Developer tools are fully pinned/hash-locked via uv 0.13.1; no third-party runtime dependency. Scanner URLs/hashes are in tools.lock.json, remote Actions are immutable commit pins. Ubuntu TShark comes from signed distro packages; exact actual version is recorded rather than advertised as a timeless hermetic pin.
+
+Debugging found a selected-oracle boundary in [Wireshark 4.2.2 Modbus source](https://github.com/wireshark/wireshark/blob/wireshark-4.2.2/epan/dissectors/packet-mbtcp.c): dissect_mbtcp_common checks eight captured bytes before its tcp_dissect_pdus call. Full native agreement uses header-intact segmentation; arbitrary-header segmentation is still required of the lab and separately disclosed in native compatibility evidence, not falsely labeled complete native coverage.

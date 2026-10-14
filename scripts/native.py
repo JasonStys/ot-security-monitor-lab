@@ -1,37 +1,45 @@
 """Jason Stys: offline independent TShark golden-vector agreement; no live capture, device access or sockets."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# variable: ROOT — line 47
-# variable: GOLDEN — line 48
-# definition: command — line 59
-# parameter: argv — line 59
-# definition: rows — line 66
-# parameter: text — line 66
-# variable: result — line 68
-# variable: line — line 69
-# variable: columns — line 70
-# variable: values — line 75
-# variable: value — line 78
-# variable: column — line 80
-# variable: column — line 82
-# variable: function — line 84
-# variable: transaction — line 84
-# variable: unit — line 84
-# definition: main — line 89
-# variable: parser — line 91
-# variable: args — line 93
-# variable: config — line 95
-# variable: samples — line 96
-# variable: results — line 97
-# variable: expected — line 98
-# variable: name — line 98
-# variable: _ — line 99
-# variable: data — line 99
-# variable: path — line 100
-# variable: decoded — line 102
-# variable: model — line 127
-# variable: frame — line 129
-# variable: report — line 138
-# variable: result — line 145
+# variable: ROOT — line 55
+# variable: GOLDEN — line 56
+# definition: command — line 67
+# parameter: argv — line 67
+# definition: rows — line 74
+# parameter: text — line 74
+# variable: result — line 76
+# variable: line — line 77
+# variable: columns — line 78
+# variable: values — line 83
+# variable: value — line 86
+# variable: column — line 88
+# variable: column — line 90
+# variable: function — line 92
+# variable: transaction — line 92
+# variable: unit — line 92
+# definition: main — line 97
+# variable: parser — line 99
+# variable: args — line 101
+# variable: config — line 103
+# variable: samples — line 104
+# variable: version — line 105
+# variable: results — line 106
+# variable: expected — line 107
+# variable: name — line 107
+# variable: _ — line 108
+# variable: data — line 108
+# variable: path — line 109
+# variable: decoded — line 111
+# variable: model — line 136
+# variable: frame — line 138
+# variable: report — line 147
+# variable: result — line 154
+# variable: _ — line 159
+# variable: split_data — line 159
+# variable: split_path — line 160
+# variable: split_native — line 162
+# variable: split_expected — line 187
+# variable: split_lab — line 188
+# variable: frame — line 190
 # END CODE MAP
 
 import argparse
@@ -47,7 +55,7 @@ from otmon.monitor import analyze
 ROOT = Path(__file__).resolve().parents[1]
 GOLDEN = {
     "normal-poll": [[1, 1, 3], [1, 1, 3]],
-    "segmented-poll": [[1, 1, 3], [1, 1, 3]],
+    "header-intact-segmented-poll": [[1, 1, 3], [1, 1, 3]],
     "coalesced-polls": [[1, 1, 3], [2, 1, 4], [1, 1, 3], [2, 1, 4]],
     "vlan-poll": [[1, 1, 3], [1, 1, 3]],
     "approved-write-6": [[1, 1, 6], [1, 1, 6]],
@@ -94,6 +102,7 @@ def main() -> None:
     args.out.mkdir(parents=True)
     config = policy((ROOT / "examples/policy.json").read_bytes())
     samples = scenarios()
+    version = command(["tshark", "--version"]).splitlines()[0]
     results = []
     for name, expected in GOLDEN.items():
         data, _ = samples[name]
@@ -139,12 +148,57 @@ def main() -> None:
         author="Jason Stys",
         scope="actual offline native TShark golden-vector dissection",
         python=platform.python_version(),
-        tshark_version=command(["tshark", "--version"]).splitlines()[0],
+        tshark_version=version,
         cases=len(results),
         matched=len(results),
         total_adus=sum(len(result["expected"]) for result in results),
         offline_read_file_only=True,
         results=results,
+    )
+    # Keep arbitrary-header split application tests; document the older native entry-point limitation separately.
+    split_data, _ = samples["segmented-poll"]
+    split_path = args.out / "partial-header-probe.pcap"
+    split_path.write_bytes(split_data)
+    split_native = rows(
+        command(
+            [
+                "tshark",
+                "-n",
+                "-2",
+                "-r",
+                str(split_path),
+                "-o",
+                "tcp.desegment_tcp_streams:TRUE",
+                "-Y",
+                "modbus",
+                "-T",
+                "fields",
+                "-E",
+                "separator=|",
+                "-e",
+                "mbtcp.trans_id",
+                "-e",
+                "mbtcp.unit_id",
+                "-e",
+                "modbus.func_code",
+            ]
+        )
+    )
+    split_expected = [[1, 1, 3], [1, 1, 3]]
+    split_lab = [
+        [frame["transaction"], frame["unit"], frame["function"]]
+        for frame in analyze(split_data, config)["frames"]
+    ]
+    if split_lab != split_expected:
+        raise AssertionError("lab failed arbitrary MBAP-header segmentation")
+    report["partial_header_compatibility_probe"] = dict(
+        expected=split_expected,
+        lab=split_lab,
+        tshark=split_native,
+        native_complete=split_native == split_expected,
+        outside_full_agreement_case_count=True,
+        explanation="TShark 4.2.2 checks 8 available bytes before MBAP reassembly; lab tests retain arbitrary header segmentation.",
+        upstream_source="https://github.com/wireshark/wireshark/blob/wireshark-4.2.2/epan/dissectors/packet-mbtcp.c",
     )
     (args.out / "report.json").write_text(
         json.dumps(report, indent=2) + "\n", encoding="utf-8"
