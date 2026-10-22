@@ -79,6 +79,7 @@ Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthe
 | [docs/reports/evaluation.json](docs/reports/evaluation.json) | Actual independent synthetic scenario detection/capture-integrity outcomes. |
 | [docs/reports/example.html](docs/reports/example.html) | Generated inert public synthetic analyst report; no real capture data. |
 | [docs/reports/native.json](docs/reports/native.json) | Actual independent TShark dissection of synthetic segmented Modbus traffic. |
+| [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/research.md](docs/research.md) | Primary-source research. |
 | [docs/review.md](docs/review.md) | Implementation review and debugging record. |
 | [docs/runbook.md](docs/runbook.md) | Operational review and release runbook. |
