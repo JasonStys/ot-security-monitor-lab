@@ -19,10 +19,10 @@
 # variable: gaps — line 108
 # variable: key — line 110
 # variable: value — line 110
-# definition: export — line 142
-# parameter: output — line 142
-# parameter: report — line 142
-# variable: identity — line 145
+# definition: export — line 150
+# parameter: output — line 150
+# parameter: report — line 150
+# variable: identity — line 153
 # END CODE MAP
 
 from __future__ import annotations
@@ -135,6 +135,14 @@ def render(report: dict[str, Any]) -> str:
         '<h2>Findings</h2><div style="overflow-x:auto"><table><caption>Explainable analyst findings</caption><thead><tr><th>Rule</th><th>Severity</th><th>Basis</th><th>Packet</th><th>Reason</th></tr></thead><tbody>'
         + rows
         + "</tbody></table></div>"
+        "<h2>Passive read observation coverage</h2><p>Unobserved baseline intervals are observation gaps, not failed devices. FC03/04 spaces stay separate; no extra polls are sent.</p><pre>"
+        + html.escape(
+            json.dumps(
+                report.get("read_coverage", {"state": "UNAVAILABLE_LEGACY_REPORT"}),
+                indent=2,
+            )
+        )
+        + "</pre>"
         "<h2>How to use this report</h2><p>Verify source authorization, capture completeness, asset/register map and maintenance approvals. Correlate with process/operator logs. Never change an OT system solely from these lab findings.</p></main></body></html>"
     )
 

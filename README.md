@@ -49,6 +49,14 @@ python scripts/benchmark.py
 
 All example captures are generated **in memory** from public documentation-range IPs; no real plant/customer data or executable traffic payloads are committed. The CLI also accepts an explicitly authorized local capture in the documented profile. Keep real captures/policies/results private and review [security](docs/security.md) before use.
 
+## Review passive asset/register observation coverage
+
+Every new CLI/SQLite/JSON/HTML report includes `read_coverage`: all configured server/unit assets, separate FC03 holding-register and FC04 input-register spaces, observed and unobserved baseline intervals, excluded unexpected-peer reads, and exact successful request/response packet/time/hash references. The UI has a dedicated coverage panel. No extra polling or device connection is performed.
+
+Only a successful exact correlated read from an expected IP peer contributes. Exception, mismatched, orphaned, unresolved or write traffic cannot fill read-observation gaps. Overlaps/retransmissions do not double-count addresses; out-of-baseline requests retain their original alert and only their overlap counts. Absent assets remain explicit. Original capture and correlation caveats stay visible alongside coverage.
+
+An unobserved range is **not** a failed device, mandatory polling requirement, security pass or physical-process safety verdict. Existing generic baseline intervals are shown independently in each register space; the tool does not assume every space/range must be polled. Review the actual engineering register map/capture vantage with an authorized control engineer. IP peer labels are observations, not authentication.
+
 ## Documentation
 
 [Architecture/ADR](docs/architecture.md) · [Contracts](docs/contracts.md) · [Detection catalog](docs/detections.md) · [Usage](docs/usage.md) · [Runbook](docs/runbook.md) · [Security](docs/security.md) · [Testing](docs/testing.md) · [Actual validation](docs/validation.md) · [Performance](docs/performance.md) · [Coding](docs/coding.md) · [Research](docs/research.md).
@@ -80,6 +88,7 @@ Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthe
 | [docs/reports/example.html](docs/reports/example.html) | Generated inert public synthetic analyst report; no real capture data. |
 | [docs/reports/native.json](docs/reports/native.json) | Actual independent TShark dissection of synthetic segmented Modbus traffic. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
+| [docs/reports/read-coverage-2026-11-09.md](docs/reports/read-coverage-2026-11-09.md) | Passive read observation coverage validation — November 9, 2026. |
 | [docs/research.md](docs/research.md) | Primary-source research. |
 | [docs/review.md](docs/review.md) | Implementation review and debugging record. |
 | [docs/runbook.md](docs/runbook.md) | Operational review and release runbook. |
@@ -94,6 +103,7 @@ Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthe
 | [otmon/capture.py](otmon/capture.py) | Jason Stys: bounded classic PCAP Ethernet/one-VLAN IPv4/TCP import; unsupported layers stay visible. |
 | [otmon/cli.py](otmon/cli.py) | Jason Stys: explicit offline PCAP analysis CLI, private output and no active capture/scanning interfaces. |
 | [otmon/contracts.py](otmon/contracts.py) | Jason Stys: strict bounded asset/register/maintenance policy and fixed-message input validation. |
+| [otmon/coverage.py](otmon/coverage.py) | Jason Stys: passive matched-read observation coverage, preserving asset/unit and register-space boundaries. |
 | [otmon/evidence.py](otmon/evidence.py) | Jason Stys: parameterized idempotent SQLite evidence and script-free escaped HTML report exports. |
 | [otmon/monitor.py](otmon/monitor.py) | Jason Stys: passive explainable OT detections, bounded correlation and explicit capture visibility limits. |
 | [otmon/protocol.py](otmon/protocol.py) | Jason Stys: bounded Modbus/TCP ADU decoder for FC03/04/06/16 and explicit unsupported-code visibility. |
@@ -113,6 +123,7 @@ Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthe
 | [tests/conftest.py](tests/conftest.py) | Jason Stys: synthetic policy and capture fixtures, no private OT/network data. |
 | [tests/test\_capture.py](tests/test_capture.py) | Jason Stys: classic PCAP endianness/resolution, truncation, layer visibility and adversarial length fuzzing. |
 | [tests/test\_contracts.py](tests/test_contracts.py) | Jason Stys: strict policy types, duplicates, intervals, roles and privacy/resource boundary tests. |
+| [tests/test\_coverage.py](tests/test_coverage.py) | Jason Stys: independent successful-read coverage and incomplete-observation regression oracles. |
 | [tests/test\_evidence\_cli.py](tests/test_evidence_cli.py) | Jason Stys: real CLI/export/SQLite lifecycle, idempotency/conflict rollback and inert report escaping. |
 | [tests/test\_monitor.py](tests/test_monitor.py) | Jason Stys: bounded analyst-state, exact connection correlation, reset/maintenance and rate-boundary tests. |
 | [tests/test\_protocol.py](tests/test_protocol.py) | Jason Stys: independent hex/field protocol vectors, extreme quantities and structured/random fuzzing. |
