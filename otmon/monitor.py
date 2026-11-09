@@ -1,111 +1,113 @@
 """Jason Stys: passive explainable OT detections, bounded correlation and explicit capture visibility limits."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# variable: RULES — line 132
-# definition: Monitor — line 227
-# variable: policy — line 230
-# variable: transport — line 231
-# variable: pending — line 232
-# variable: rates — line 235
-# variable: bursting — line 236
-# variable: alerts — line 237
-# variable: frames — line 238
-# variable: counts — line 239
-# definition: __post_init__ — line 241
-# parameter: self — line 241
-# attribute: transport — line 243
-# definition: alert — line 245
-# parameter: self — line 246
-# parameter: rule — line 247
-# parameter: segment — line 248
-# parameter: flow — line 249
-# parameter: message — line 250
-# parameter: raw — line 251
-# variable: basis — line 255
-# variable: reason — line 255
-# variable: severity — line 255
-# definition: asset — line 272
-# parameter: flow — line 272
-# parameter: self — line 272
-# parameter: unit — line 272
-# variable: asset — line 277
-# definition: values — line 283
-# parameter: self — line 284
-# parameter: asset — line 285
-# parameter: address — line 286
-# parameter: values — line 287
-# parameter: segment — line 288
-# parameter: flow — line 289
-# parameter: message — line 290
-# parameter: raw — line 291
-# variable: offset — line 294
-# variable: value — line 294
-# variable: reg — line 295
-# variable: reg — line 298
-# definition: request — line 307
-# parameter: flow — line 308
-# parameter: message — line 308
-# parameter: raw — line 308
-# parameter: segment — line 308
-# parameter: self — line 308
-# variable: address — line 318
-# variable: quantity — line 318
-# variable: asset — line 320
-# variable: client — line 324
-# variable: window — line 334
-# variable: registers — line 337
-# variable: reg — line 339
-# variable: index — line 342
-# variable: reg — line 344
-# variable: reg — line 347
-# variable: rate_key — line 351
-# variable: times — line 356
-# variable: key — line 368
-# definition: response — line 375
-# parameter: flow — line 376
-# parameter: message — line 376
-# parameter: raw — line 376
-# parameter: segment — line 376
-# parameter: self — line 376
-# variable: key — line 383
-# variable: pending — line 384
-# variable: _ — line 388
-# variable: request — line 388
-# variable: matches — line 389
-# variable: matches — line 391
+# variable: RULES — line 135
+# definition: Monitor — line 230
+# variable: policy — line 233
+# variable: transport — line 234
+# variable: pending — line 235
+# variable: rates — line 238
+# variable: bursting — line 239
+# variable: alerts — line 240
+# variable: frames — line 241
+# variable: counts — line 242
+# variable: read_observations — line 243
+# definition: __post_init__ — line 245
+# parameter: self — line 245
+# attribute: transport — line 247
+# definition: alert — line 249
+# parameter: self — line 250
+# parameter: rule — line 251
+# parameter: segment — line 252
+# parameter: flow — line 253
+# parameter: message — line 254
+# parameter: raw — line 255
+# variable: basis — line 259
+# variable: reason — line 259
+# variable: severity — line 259
+# definition: asset — line 276
+# parameter: flow — line 276
+# parameter: self — line 276
+# parameter: unit — line 276
+# variable: asset — line 281
+# definition: values — line 287
+# parameter: self — line 288
+# parameter: asset — line 289
+# parameter: address — line 290
+# parameter: values — line 291
+# parameter: segment — line 292
+# parameter: flow — line 293
+# parameter: message — line 294
+# parameter: raw — line 295
+# variable: offset — line 298
+# variable: value — line 298
+# variable: reg — line 299
+# variable: reg — line 302
+# definition: request — line 311
+# parameter: flow — line 312
+# parameter: message — line 312
+# parameter: raw — line 312
+# parameter: segment — line 312
+# parameter: self — line 312
+# variable: address — line 322
+# variable: quantity — line 322
+# variable: asset — line 324
+# variable: client — line 328
+# variable: window — line 338
+# variable: registers — line 341
+# variable: reg — line 343
+# variable: index — line 346
+# variable: reg — line 348
+# variable: reg — line 351
+# variable: rate_key — line 355
+# variable: times — line 360
+# variable: key — line 372
+# definition: response — line 379
+# parameter: flow — line 380
+# parameter: message — line 380
+# parameter: raw — line 380
+# parameter: segment — line 380
+# parameter: self — line 380
+# variable: key — line 387
+# variable: pending — line 388
+# variable: request — line 392
+# variable: requested_segment — line 392
 # variable: matches — line 393
 # variable: matches — line 395
-# variable: asset — line 401
-# definition: feed — line 412
-# parameter: segment — line 412
-# parameter: self — line 412
-# variable: key — line 414
-# variable: previous — line 414
-# variable: request — line 414
-# variable: flow — line 418
-# variable: issues — line 418
-# variable: raw_messages — line 418
-# variable: reset — line 418
-# variable: response — line 418
-# variable: _ — line 420
-# variable: key — line 420
-# variable: request — line 420
-# variable: issue — line 424
-# variable: raw — line 429
-# variable: message — line 431
-# definition: finish — line 460
-# parameter: self — line 460
-# variable: _ — line 462
-# variable: flow — line 462
-# variable: request — line 462
-# variable: segment — line 462
-# definition: analyze — line 472
-# parameter: config — line 472
-# parameter: data — line 472
-# variable: capture — line 474
-# variable: segments — line 474
-# variable: monitor — line 475
-# variable: segment — line 476
-# variable: alert — line 489
+# variable: matches — line 397
+# variable: matches — line 399
+# variable: asset — line 405
+# definition: feed — line 431
+# parameter: segment — line 431
+# parameter: self — line 431
+# variable: key — line 433
+# variable: previous — line 433
+# variable: request — line 433
+# variable: flow — line 437
+# variable: issues — line 437
+# variable: raw_messages — line 437
+# variable: reset — line 437
+# variable: response — line 437
+# variable: _ — line 439
+# variable: key — line 439
+# variable: request — line 439
+# variable: issue — line 443
+# variable: raw — line 448
+# variable: message — line 450
+# definition: finish — line 479
+# parameter: self — line 479
+# variable: _ — line 481
+# variable: flow — line 481
+# variable: request — line 481
+# variable: segment — line 481
+# definition: analyze — line 491
+# parameter: config — line 491
+# parameter: data — line 491
+# variable: capture — line 493
+# variable: segments — line 493
+# variable: monitor — line 494
+# variable: segment — line 495
+# variable: alert — line 508
+# variable: alert — line 516
 # END CODE MAP
 
 from __future__ import annotations
@@ -126,6 +128,7 @@ from otmon.contracts import (
     require,
     sha,
 )
+from otmon.coverage import summarize
 from otmon.protocol import Message, decode
 from otmon.transport import Flow, Transport
 
@@ -237,6 +240,7 @@ class Monitor:
     alerts: list[dict[str, Any]] = field(default_factory=list)
     frames: list[dict[str, Any]] = field(default_factory=list)
     counts: Counter[str] = field(default_factory=Counter)
+    read_observations: list[dict[str, Any]] = field(default_factory=list)
 
     def __post_init__(self) -> None:
         """Initialize transport against independent configured service port."""
@@ -385,7 +389,7 @@ class Monitor:
         if pending is None:
             self.alert("unexpected_response", segment, flow, message, raw)
             return
-        request, _ = pending
+        request, requested_segment = pending
         matches = request.unit == message.unit and request.function == message.function
         if message.exception is None:
             matches = matches and request.quantity == message.quantity
@@ -405,6 +409,21 @@ class Monitor:
             and message.function in {3, 4}
             and message.exception is None
         ):
+            self.read_observations.append(
+                dict(
+                    asset=asset.name,
+                    function=message.function,
+                    start=request.address,
+                    end=request.address + cast(int, request.quantity) - 1,
+                    expected_peer=flow[0] in asset.readers + asset.writers,
+                    request_packet=requested_segment.packet,
+                    response_packet=segment.packet,
+                    requested_at_ms=requested_segment.time_ms,
+                    responded_at_ms=segment.time_ms,
+                    transaction=message.transaction,
+                    response_frame_sha256=sha(raw),
+                )
+            )
             self.values(
                 asset, request.address, message.values, segment, flow, message, raw
             )
@@ -490,6 +509,12 @@ def analyze(data: bytes, config: Policy) -> dict[str, Any]:
         ),
         alerts=monitor.alerts,
         frames=monitor.frames,
+        read_coverage=summarize(
+            config,
+            monitor.read_observations,
+            capture,
+            dict(Counter(alert["rule"] for alert in monitor.alerts)),
+        ),
         limitations=[
             "offline passive lab, not a production IDS",
             "IP labels do not authenticate peers",
