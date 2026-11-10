@@ -63,7 +63,7 @@ An unobserved range is **not** a failed device, mandatory polling requirement, s
 
 Every authored source has purpose/function/class descriptions and CI-checked exact physical definition/parameter/variable maps (Python AST; SQL/workflow lexical indexes). The complete file guide below covers the exact tracked set, including each code, test, workflow, documentation and report file.
 
-Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthetic scenario outcomes and 16 independently dissected wire-vector ADUs. [Actual results](docs/validation.md) disclose the separate older TShark partial-header limitation. [Download/inspect the inert synthetic HTML report](docs/reports/example.html); no hosted site or real plant data is included.
+Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthetic scenario outcomes and 16 independently dissected wire-vector ADUs. [Actual results](docs/validation.md) disclose the separate older TShark partial-header limitation. [Download/inspect the inert synthetic HTML report](docs/reports/example.html); no hosted site or real plant data is included.
 
 ## Complete file guide
 
@@ -81,13 +81,17 @@ Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthe
 | [docs/coding.md](docs/coding.md) | Coding and documentation conventions. |
 | [docs/contracts.md](docs/contracts.md) | Input, state and evidence contracts. |
 | [docs/detections.md](docs/detections.md) | Detection catalog and interpretation. |
+| [docs/handbook.md](docs/handbook.md) | OT Security Monitor Lab handbook. |
 | [docs/performance.md](docs/performance.md) | Complexity and benchmark methodology. |
 | [docs/reports/benchmark.json](docs/reports/benchmark.json) | Measured bounded capture analysis and Python allocation peak. |
 | [docs/reports/ci.json](docs/reports/ci.json) | Actual immutable accepted-source CI snapshot. |
+| [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
 | [docs/reports/evaluation.json](docs/reports/evaluation.json) | Actual independent synthetic scenario detection/capture-integrity outcomes. |
 | [docs/reports/example.html](docs/reports/example.html) | Generated inert public synthetic analyst report; no real capture data. |
 | [docs/reports/native.json](docs/reports/native.json) | Actual independent TShark dissection of synthetic segmented Modbus traffic. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
+| [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed source-bound Word guide with dated validation observations and practical limits. |
+| [docs/reports/publications.json](docs/reports/publications.json) | Exact publication hashes, reviewed page identities and source/evidence baselines. |
 | [docs/reports/read-coverage-2026-11-09.md](docs/reports/read-coverage-2026-11-09.md) | Passive read observation coverage validation — November 9, 2026. |
 | [docs/research.md](docs/research.md) | Primary-source research. |
 | [docs/review.md](docs/review.md) | Implementation review and debugging record. |
@@ -117,6 +121,7 @@ Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthe
 | [scripts/file\_guide.py](scripts/file_guide.py) | Jason Stys: exact tracked-file README purpose inventory, unknown files fail rather than receive guesses. |
 | [scripts/native.py](scripts/native.py) | Jason Stys: offline independent TShark golden-vector agreement; no live capture, device access or sockets. |
 | [scripts/preview.py](scripts/preview.py) | Jason Stys: temporary loopback-only inert synthetic HTML preview for visual QA, not a hosted OT service. |
+| [scripts/publication\_text.py](scripts/publication_text.py) | Jason Stys: inspect only named reviewed Office editions without hiding their XML. |
 | [scripts/scanners.py](scripts/scanners.py) | Install only hash-pinned official Linux scanner binaries. Created by Jason Stys. |
 | [scripts/validate\_repo.py](scripts/validate_repo.py) | Jason Stys: tracked-file privacy, passive-runtime imports and zero-artifact/cache workflow guards. |
 | [sql/evidence.sql](sql/evidence.sql) | Jason Stys: atomic offline analysis evidence, keyed idempotency and indexed analyst rule lookup. |
@@ -127,8 +132,15 @@ Accepted evidence: 130 tests on every OS, 100% runtime coverage, 27 exact synthe
 | [tests/test\_evidence\_cli.py](tests/test_evidence_cli.py) | Jason Stys: real CLI/export/SQLite lifecycle, idempotency/conflict rollback and inert report escaping. |
 | [tests/test\_monitor.py](tests/test_monitor.py) | Jason Stys: bounded analyst-state, exact connection correlation, reset/maintenance and rate-boundary tests. |
 | [tests/test\_protocol.py](tests/test_protocol.py) | Jason Stys: independent hex/field protocol vectors, extreme quantities and structured/random fuzzing. |
+| [tests/test\_publication\_text.py](tests/test_publication_text.py) | Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content. |
 | [tests/test\_scenarios.py](tests/test_scenarios.py) | Jason Stys: exact manual scenario oracles, including no-finding baselines and subtle visibility failures. |
 | [tests/test\_transport.py](tests/test_transport.py) | Jason Stys: conservative TCP overlap/gap/SYN/FIN/reset/sequence-wrap and state-cap regressions. |
 | [tools.lock.json](tools.lock.json) | Official Linux scanner versions, URLs and SHA256 digests. |
 
 <!-- END FILE GUIDE -->
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.

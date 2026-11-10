@@ -1,20 +1,20 @@
 """Jason Stys: tracked-file privacy, passive-runtime imports and zero-artifact/cache workflow guards."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# variable: ROOT — line 26
-# definition: main — line 29
-# variable: names — line 31
-# variable: name — line 37
-# variable: part — line 40
-# variable: path — line 47
-# variable: text — line 50
-# variable: imports — line 59
-# variable: node — line 60
-# variable: alias — line 62
-# variable: path — line 78
-# variable: text — line 79
-# variable: action — line 86
-# variable: codeql — line 89
-# variable: flag — line 90
+# variable: ROOT — line 31
+# definition: main — line 34
+# variable: names — line 36
+# variable: name — line 42
+# variable: part — line 45
+# variable: path — line 52
+# variable: text — line 55
+# variable: imports — line 64
+# variable: node — line 65
+# variable: alias — line 67
+# variable: path — line 83
+# variable: text — line 84
+# variable: action — line 91
+# variable: codeql — line 94
+# variable: flag — line 95
 # END CODE MAP
 
 import ast
@@ -22,6 +22,11 @@ import json
 import re
 import subprocess
 from pathlib import Path
+
+if __package__:
+    from .publication_text import public_text
+else:
+    from publication_text import public_text
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -47,7 +52,7 @@ def main() -> None:
         path = ROOT / name
         if path.is_symlink() or path.is_junction():
             raise ValueError("tracked links are forbidden")
-        text = path.read_text(encoding="utf-8")
+        text = public_text(path, ROOT)
         if re.search(
             r"(?:ghp_|github_pat_|sk-proj-)[A-Za-z0-9_]{12,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",
             text,
