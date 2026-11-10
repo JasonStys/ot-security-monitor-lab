@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "project": "ot-security-monitor-lab",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "88a34d59e7433aeba3e47066840274666fa7f8c3",
+  "sourceUrl": "https://github.com/JasonStys/ot-security-monitor-lab/tree/88a34d59e7433aeba3e47066840274666fa7f8c3",
+  "functionalEvidenceBaseline": "88a34d59e7433aeba3e47066840274666fa7f8c3",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42714050852,
+      "event": "push",
+      "headSha": "88a34d59e7433aeba3e47066840274666fa7f8c3",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42714050852"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42714050574,
+      "event": "push",
+      "headSha": "88a34d59e7433aeba3e47066840274666fa7f8c3",
+      "name": "Validate",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42714050574"
+    }
+  ],
+  "summary": "Report expected-peer successful-read address coverage with separate function codes, interval unions, absent assets and capture gaps.",
+  "rationale": "Makes passive monitoring coverage auditable without contacting devices or treating unobserved activity as safe.",
+  "limitations": [
+    "Passive capture review only; no new wire-function support, active polling or device access is supplied.",
+    "Generic existing baselines are shown independently per address space; no polling expectation is invented.",
+    "Unobserved addresses are capture gaps, not failed devices, security passes or safety proof. IP labels do not establish device identity."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 43843,
+      "sha256": "9ceb3bd067625db4895ef49012bb766899ec0dbe2943ffba81e74ba7f6324b3b",
+      "sourceBaseline": "88a34d59e7433aeba3e47066840274666fa7f8c3",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 4,
+        "renderedPageSha256": {
+          "page-1.png": "b42ebf457c17c8a4b019e1b64d52c30ef7eea1b44f111dfd0d9b61ef93b19935",
+          "page-2.png": "2f24db8e9b585bc8dc7871dbcf65096575bd6ae4cb6776b70f1309930c4421b9",
+          "page-3.png": "7aaefe44b0934f0c711f5d584025c737aa9f65843b30a7d425340fa05d93916a",
+          "page-4.png": "4464e08e69a074be0dc562f3eb4b3c9f16bff15fac92eabda57d0d4b1d0bcdba"
+        }
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}
