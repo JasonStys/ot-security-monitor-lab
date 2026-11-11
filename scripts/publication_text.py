@@ -5,24 +5,24 @@ Unknown binary files retain strict UTF-8 failure. No Office content is executed.
 """
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
 # variable: EDITION_ROOTS — line 32
-# variable: MAX_PACKAGE_BYTES — line 37
-# variable: MAX_EXPANDED_BYTES — line 38
-# variable: MAX_MEMBER_BYTES — line 39
-# variable: MAX_MEMBERS — line 40
-# definition: public_text — line 43
-# parameter: path — line 43
-# parameter: root — line 43
-# variable: relative — line 45
-# variable: source — line 49
-# variable: package — line 52
-# variable: members — line 53
-# variable: member — line 54
-# variable: names — line 54
-# variable: member — line 68
-# variable: result — line 70
-# variable: member — line 71
-# variable: stream — line 81
-# variable: payload — line 82
+# variable: MAX_PACKAGE_BYTES — line 38
+# variable: MAX_EXPANDED_BYTES — line 39
+# variable: MAX_MEMBER_BYTES — line 40
+# variable: MAX_MEMBERS — line 41
+# definition: public_text — line 44
+# parameter: path — line 44
+# parameter: root — line 44
+# variable: relative — line 46
+# variable: source — line 50
+# variable: package — line 53
+# variable: members — line 54
+# variable: member — line 55
+# variable: names — line 55
+# variable: member — line 69
+# variable: result — line 71
+# variable: member — line 72
+# variable: stream — line 82
+# variable: payload — line 83
 # END CODE MAP
 
 import os
@@ -30,6 +30,7 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZIP_STORED, BadZipFile, ZipFile
 
 EDITION_ROOTS = {
+    "docs/reports/windows-application-guide-1.1.0.docx": "word/document.xml",
     "docs/reports/project-guide.docx": "word/document.xml",
     "docs/reports/validation-review.docx": "word/document.xml",
     "docs/reports/validation-evidence.xlsx": "xl/workbook.xml",
