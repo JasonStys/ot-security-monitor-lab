@@ -103,6 +103,7 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed source-bound Word guide with dated validation observations and practical limits. |
 | [docs/reports/publications.json](docs/reports/publications.json) | Exact publication hashes, reviewed page identities and source/evidence baselines. |
 | [docs/reports/read-coverage-2026-11-09.md](docs/reports/read-coverage-2026-11-09.md) | Passive read observation coverage validation — November 9, 2026. |
+| [docs/reports/tshark-runner-acquisition-2026-11-11.md](docs/reports/tshark-runner-acquisition-2026-11-11.md) | Independent TShark acquisition — 11 November 2026. |
 | [docs/reports/windows-application-guide-1.1.0.docx](docs/reports/windows-application-guide-1.1.0.docx) | Current illustrated installed workbench guide with actual screenshots, exact source and measured limits. |
 | [docs/reports/windows-application-guide-1.1.0.json](docs/reports/windows-application-guide-1.1.0.json) | Current Word, screenshot, immutable source and reviewed-page digests. |
 | [docs/research.md](docs/research.md) | Primary-source research. |
@@ -162,6 +163,7 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [tests/test\_profile\_admission.py](tests/test_profile_admission.py) | Actual pre-existing alias refusal and ordinary SQLite recovery continuity. Jason Stys. |
 | [tests/test\_protocol.py](tests/test_protocol.py) | Jason Stys: independent hex/field protocol vectors, extreme quantities and structured/random fuzzing. |
 | [tests/test\_publication\_text.py](tests/test_publication_text.py) | Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content. |
+| [tests/test\_runner\_network\_policy.py](tests/test_runner_network_policy.py) | Actual TShark-job policy mutants for signed disposable-runner acquisition. Jason Stys. |
 | [tests/test\_scenarios.py](tests/test_scenarios.py) | Jason Stys: exact manual scenario oracles, including no-finding baselines and subtle visibility failures. |
 | [tests/test\_transport.py](tests/test_transport.py) | Jason Stys: conservative TCP overlap/gap/SYN/FIN/reset/sequence-wrap and state-cap regressions. |
 | [tools.lock.json](tools.lock.json) | Official Linux scanner versions, URLs and SHA256 digests. |
@@ -178,3 +180,7 @@ Start with the [organized handbook](docs/handbook.md) for current usage, design,
 ## Current Windows application guide
 
 The published **1.1.0** app has a [four-page illustrated guide](docs/reports/windows-application-guide-1.1.0.docx) with actual installed screenshots, a worked user journey, source excerpts and operating limits. Read the [installed validation report](docs/reports/installed-windows-1.1.0-2026-11-11.md) and [review manifest](docs/reports/windows-application-guide-1.1.0.json) for exact scope. Historical editions remain unchanged.
+
+## Hosted TShark setup evidence
+
+The [dated acquisition report](docs/reports/tshark-runner-acquisition-2026-11-11.md) distinguishes a failed signed-package download from an actual protocol/golden-vector failure. The original independent TShark gate remains mandatory.

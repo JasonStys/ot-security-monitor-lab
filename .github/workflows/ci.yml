@@ -1,103 +1,109 @@
 # Jason Stys: cross-platform passive monitoring, independent offline TShark and audited tools; zero artifacts/caches.
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# parameter: name — line 102
-# parameter: on — line 103
-# parameter: push — line 104
-# parameter: branches — line 105
-# parameter: pull_request — line 106
-# parameter: workflow_dispatch — line 107
-# parameter: permissions — line 108
-# parameter: contents — line 109
-# parameter: concurrency — line 110
-# parameter: group — line 111
-# parameter: cancel-in-progress — line 112
-# parameter: jobs — line 113
-# parameter: quality — line 114
-# parameter: name — line 115
-# parameter: runs-on — line 116
-# parameter: timeout-minutes — line 117
-# parameter: strategy — line 118
-# parameter: fail-fast — line 119
-# parameter: matrix — line 120
-# parameter: include — line 121
-# parameter: env — line 126
-# parameter: PYTHONPATH — line 127
-# parameter: PIP_NO_CACHE_DIR — line 128
-# parameter: steps — line 129
-# parameter: uses — line 130
-# parameter: with — line 131
-# parameter: persist-credentials — line 132
-# parameter: uses — line 133
-# parameter: with — line 134
-# parameter: python-version — line 135
-# parameter: run — line 136
-# parameter: name — line 137
-# parameter: if — line 138
-# parameter: run — line 139
-# parameter: run — line 140
-# parameter: run — line 141
+# parameter: name — line 108
+# parameter: on — line 109
+# parameter: push — line 110
+# parameter: branches — line 111
+# parameter: pull_request — line 112
+# parameter: workflow_dispatch — line 113
+# parameter: permissions — line 114
+# parameter: contents — line 115
+# parameter: concurrency — line 116
+# parameter: group — line 117
+# parameter: cancel-in-progress — line 118
+# parameter: jobs — line 119
+# parameter: quality — line 120
+# parameter: name — line 121
+# parameter: runs-on — line 122
+# parameter: timeout-minutes — line 123
+# parameter: strategy — line 124
+# parameter: fail-fast — line 125
+# parameter: matrix — line 126
+# parameter: include — line 127
+# parameter: env — line 132
+# parameter: PYTHONPATH — line 133
+# parameter: PIP_NO_CACHE_DIR — line 134
+# parameter: steps — line 135
+# parameter: uses — line 136
+# parameter: with — line 137
+# parameter: persist-credentials — line 138
+# parameter: uses — line 139
+# parameter: with — line 140
+# parameter: python-version — line 141
 # parameter: run — line 142
-# parameter: run — line 143
-# shell variable: cov — line 143
-# shell variable: report — line 143
-# parameter: run — line 144
+# parameter: name — line 143
+# parameter: if — line 144
 # parameter: run — line 145
 # parameter: run — line 146
 # parameter: run — line 147
 # parameter: run — line 148
-# parameter: native — line 149
-# parameter: name — line 150
-# parameter: runs-on — line 151
-# parameter: timeout-minutes — line 152
-# parameter: env — line 153
-# parameter: PYTHONPATH — line 154
-# parameter: steps — line 155
-# parameter: uses — line 156
-# parameter: with — line 157
-# parameter: persist-credentials — line 158
-# parameter: uses — line 159
-# parameter: with — line 160
-# parameter: python-version — line 161
-# parameter: run — line 162
-# parameter: run — line 163
-# parameter: security — line 164
-# parameter: name — line 165
-# parameter: runs-on — line 166
-# parameter: timeout-minutes — line 167
-# parameter: env — line 168
-# parameter: PIP_NO_CACHE_DIR — line 169
-# parameter: steps — line 170
-# parameter: uses — line 171
-# parameter: with — line 172
-# parameter: persist-credentials — line 173
-# parameter: fetch-depth — line 174
-# parameter: uses — line 175
-# parameter: with — line 176
-# parameter: python-version — line 177
-# parameter: run — line 178
-# parameter: run — line 179
-# parameter: run — line 180
-# parameter: run — line 181
-# parameter: run — line 182
-# parameter: run — line 183
-# parameter: portable-windows — line 184
-# parameter: name — line 185
-# parameter: runs-on — line 186
-# parameter: timeout-minutes — line 187
-# parameter: steps — line 188
-# parameter: uses — line 189
-# parameter: with — line 190
-# parameter: persist-credentials — line 191
-# parameter: uses — line 192
-# parameter: with — line 193
-# parameter: python-version — line 194
+# parameter: run — line 149
+# shell variable: cov — line 149
+# shell variable: report — line 149
+# parameter: run — line 150
+# parameter: run — line 151
+# parameter: run — line 152
+# parameter: run — line 153
+# parameter: run — line 154
+# parameter: native — line 155
+# parameter: name — line 156
+# parameter: runs-on — line 157
+# parameter: timeout-minutes — line 158
+# parameter: env — line 159
+# parameter: PYTHONPATH — line 160
+# parameter: steps — line 161
+# parameter: uses — line 162
+# parameter: with — line 163
+# parameter: persist-credentials — line 164
+# parameter: uses — line 165
+# parameter: with — line 166
+# parameter: python-version — line 167
+# parameter: name — line 168
+# parameter: if — line 169
+# parameter: timeout-minutes — line 170
+# parameter: shell — line 171
+# parameter: run — line 172
+# shell variable: apt_network_config — line 190
 # parameter: run — line 195
 # parameter: run — line 196
-# parameter: run — line 197
+# parameter: security — line 197
 # parameter: name — line 198
-# parameter: run — line 199
-# parameter: name — line 200
-# parameter: run — line 201
+# parameter: runs-on — line 199
+# parameter: timeout-minutes — line 200
+# parameter: env — line 201
+# parameter: PIP_NO_CACHE_DIR — line 202
+# parameter: steps — line 203
+# parameter: uses — line 204
+# parameter: with — line 205
+# parameter: persist-credentials — line 206
+# parameter: fetch-depth — line 207
+# parameter: uses — line 208
+# parameter: with — line 209
+# parameter: python-version — line 210
+# parameter: run — line 211
+# parameter: run — line 212
+# parameter: run — line 213
+# parameter: run — line 214
+# parameter: run — line 215
+# parameter: run — line 216
+# parameter: portable-windows — line 217
+# parameter: name — line 218
+# parameter: runs-on — line 219
+# parameter: timeout-minutes — line 220
+# parameter: steps — line 221
+# parameter: uses — line 222
+# parameter: with — line 223
+# parameter: persist-credentials — line 224
+# parameter: uses — line 225
+# parameter: with — line 226
+# parameter: python-version — line 227
+# parameter: run — line 228
+# parameter: run — line 229
+# parameter: run — line 230
+# parameter: name — line 231
+# parameter: run — line 232
+# parameter: name — line 233
+# parameter: run — line 234
 # END CODE MAP
 name: Validate
 on:
@@ -159,6 +165,33 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.14'
+      - name: Bound official mirror access on the disposable Ubuntu runner
+        if: runner.os == 'Linux'
+        timeout-minutes: 1
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_ACTIONS" = "true"
+          test "$RUNNER_OS" = "Linux"
+          test "$(uname -m)" = "x86_64"
+          . /etc/os-release
+          test "$ID" = "ubuntu"
+          test "$VERSION_ID" = "24.04"
+          test -f /etc/apt/apt-mirrors.txt
+          test -f /usr/share/keyrings/ubuntu-archive-keyring.gpg
+          grep -Eq '^URIs:[[:space:]]+mirror[+]file:/etc/apt/apt-mirrors[.]txt[[:space:]]*$' /etc/apt/sources.list.d/ubuntu.sources
+          grep -Eq '^Signed-By:[[:space:]]+/usr/share/keyrings/ubuntu-archive-keyring[.]gpg[[:space:]]*$' /etc/apt/sources.list.d/ubuntu.sources
+          # Keep suites/components/keyrings unchanged; no Azure mirror or unsigned fallback.
+          printf 'https://archive.ubuntu.com/ubuntu/\tpriority:1\nhttps://security.ubuntu.com/ubuntu/\tpriority:2\n' |
+            sudo tee /etc/apt/apt-mirrors.txt >/dev/null
+          # Bound existing acquisition, not test budgets; explicitly add no retries.
+          printf '%s\n' 'Acquire::Retries "0";' 'Acquire::http::Timeout "15";' 'Acquire::https::Timeout "15";' |
+            sudo tee /etc/apt/apt.conf.d/zzzz-portfolio-network >/dev/null
+          apt_network_config="$(apt-config dump Acquire::Retries Acquire::http::Timeout Acquire::https::Timeout)"
+          printf '%s\n' "$apt_network_config"
+          grep -Fx 'Acquire::Retries "0";' <<< "$apt_network_config"
+          grep -Fx 'Acquire::http::Timeout "15";' <<< "$apt_network_config"
+          grep -Fx 'Acquire::https::Timeout "15";' <<< "$apt_network_config"
       - run: sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y tshark
       - run: python scripts/native.py
   security:
