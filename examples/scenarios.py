@@ -147,7 +147,7 @@ def checksum(data: bytes) -> int:
     total = sum(struct.unpack(">" + "H" * (len(data) // 2), data))
     while total >> 16:
         total = (total & 65535) + (total >> 16)
-    return (~total) & 65535
+    return int((~total) & 65535)
 
 
 def packet(
