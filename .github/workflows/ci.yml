@@ -1,103 +1,105 @@
 # Jason Stys: cross-platform passive monitoring, independent offline TShark and audited tools; zero artifacts/caches.
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# parameter: name — line 102
-# parameter: on — line 103
-# parameter: push — line 104
-# parameter: branches — line 105
-# parameter: pull_request — line 106
-# parameter: workflow_dispatch — line 107
-# parameter: permissions — line 108
-# parameter: contents — line 109
-# parameter: concurrency — line 110
-# parameter: group — line 111
-# parameter: cancel-in-progress — line 112
-# parameter: jobs — line 113
-# parameter: quality — line 114
-# parameter: name — line 115
-# parameter: runs-on — line 116
-# parameter: timeout-minutes — line 117
-# parameter: strategy — line 118
-# parameter: fail-fast — line 119
-# parameter: matrix — line 120
-# parameter: include — line 121
-# parameter: env — line 126
-# parameter: PYTHONPATH — line 127
-# parameter: PIP_NO_CACHE_DIR — line 128
-# parameter: steps — line 129
-# parameter: uses — line 130
-# parameter: with — line 131
-# parameter: persist-credentials — line 132
-# parameter: uses — line 133
-# parameter: with — line 134
-# parameter: python-version — line 135
-# parameter: run — line 136
-# parameter: name — line 137
-# parameter: if — line 138
-# parameter: run — line 139
-# parameter: run — line 140
+# parameter: name — line 104
+# parameter: on — line 105
+# parameter: push — line 106
+# parameter: branches — line 107
+# parameter: pull_request — line 108
+# parameter: workflow_dispatch — line 109
+# parameter: permissions — line 110
+# parameter: contents — line 111
+# parameter: concurrency — line 112
+# parameter: group — line 113
+# parameter: cancel-in-progress — line 114
+# parameter: jobs — line 115
+# parameter: quality — line 116
+# parameter: name — line 117
+# parameter: runs-on — line 118
+# parameter: timeout-minutes — line 119
+# parameter: strategy — line 120
+# parameter: fail-fast — line 121
+# parameter: matrix — line 122
+# parameter: include — line 123
+# parameter: env — line 128
+# parameter: PYTHONPATH — line 129
+# parameter: PIP_NO_CACHE_DIR — line 130
+# parameter: steps — line 131
+# parameter: uses — line 132
+# parameter: with — line 133
+# parameter: persist-credentials — line 134
+# parameter: uses — line 135
+# parameter: with — line 136
+# parameter: python-version — line 137
+# parameter: run — line 138
+# parameter: name — line 139
+# parameter: if — line 140
 # parameter: run — line 141
 # parameter: run — line 142
 # parameter: run — line 143
-# shell variable: cov — line 143
-# shell variable: report — line 143
 # parameter: run — line 144
 # parameter: run — line 145
+# shell variable: cov — line 145
+# shell variable: report — line 145
 # parameter: run — line 146
 # parameter: run — line 147
 # parameter: run — line 148
-# parameter: native — line 149
-# parameter: name — line 150
-# parameter: runs-on — line 151
-# parameter: timeout-minutes — line 152
-# parameter: env — line 153
-# parameter: PYTHONPATH — line 154
-# parameter: steps — line 155
-# parameter: uses — line 156
-# parameter: with — line 157
-# parameter: persist-credentials — line 158
-# parameter: uses — line 159
-# parameter: with — line 160
-# parameter: python-version — line 161
-# parameter: run — line 162
-# parameter: run — line 163
-# parameter: security — line 164
-# parameter: name — line 165
-# parameter: runs-on — line 166
-# parameter: timeout-minutes — line 167
-# parameter: env — line 168
-# parameter: PIP_NO_CACHE_DIR — line 169
-# parameter: steps — line 170
-# parameter: uses — line 171
-# parameter: with — line 172
-# parameter: persist-credentials — line 173
-# parameter: fetch-depth — line 174
+# parameter: run — line 149
+# parameter: run — line 150
+# parameter: native — line 151
+# parameter: name — line 152
+# parameter: runs-on — line 153
+# parameter: timeout-minutes — line 154
+# parameter: env — line 155
+# parameter: PYTHONPATH — line 156
+# parameter: steps — line 157
+# parameter: uses — line 158
+# parameter: with — line 159
+# parameter: persist-credentials — line 160
+# parameter: uses — line 161
+# parameter: with — line 162
+# parameter: python-version — line 163
+# parameter: name — line 164
+# parameter: timeout-minutes — line 165
+# parameter: run — line 166
+# parameter: run — line 167
+# parameter: security — line 168
+# parameter: name — line 169
+# parameter: runs-on — line 170
+# parameter: timeout-minutes — line 171
+# parameter: env — line 172
+# parameter: PIP_NO_CACHE_DIR — line 173
+# parameter: steps — line 174
 # parameter: uses — line 175
 # parameter: with — line 176
-# parameter: python-version — line 177
-# parameter: run — line 178
-# parameter: run — line 179
-# parameter: run — line 180
-# parameter: run — line 181
+# parameter: persist-credentials — line 177
+# parameter: fetch-depth — line 178
+# parameter: uses — line 179
+# parameter: with — line 180
+# parameter: python-version — line 181
 # parameter: run — line 182
 # parameter: run — line 183
-# parameter: portable-windows — line 184
-# parameter: name — line 185
-# parameter: runs-on — line 186
-# parameter: timeout-minutes — line 187
-# parameter: steps — line 188
-# parameter: uses — line 189
-# parameter: with — line 190
-# parameter: persist-credentials — line 191
-# parameter: uses — line 192
-# parameter: with — line 193
-# parameter: python-version — line 194
-# parameter: run — line 195
-# parameter: run — line 196
-# parameter: run — line 197
-# parameter: name — line 198
+# parameter: run — line 184
+# parameter: run — line 185
+# parameter: run — line 186
+# parameter: run — line 187
+# parameter: portable-windows — line 188
+# parameter: name — line 189
+# parameter: runs-on — line 190
+# parameter: timeout-minutes — line 191
+# parameter: steps — line 192
+# parameter: uses — line 193
+# parameter: with — line 194
+# parameter: persist-credentials — line 195
+# parameter: uses — line 196
+# parameter: with — line 197
+# parameter: python-version — line 198
 # parameter: run — line 199
-# parameter: name — line 200
+# parameter: run — line 200
 # parameter: run — line 201
+# parameter: name — line 202
+# parameter: run — line 203
+# parameter: name — line 204
+# parameter: run — line 205
 # END CODE MAP
 name: Validate
 on:
@@ -148,7 +150,7 @@ jobs:
       - run: python scripts/benchmark.py
   native:
     name: Independent offline TShark golden vectors
-    runs-on: ubuntu-24.04
+    runs-on: windows-latest
     timeout-minutes: 15
     env:
       PYTHONPATH: .
@@ -159,7 +161,9 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.14'
-      - run: sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y tshark
+      - name: Verify and extract the official offline dissector on this disposable worker
+        timeout-minutes: 5
+        run: python scripts/tshark_runner.py
       - run: python scripts/native.py
   security:
     name: Locked graph + secrets + workflows
