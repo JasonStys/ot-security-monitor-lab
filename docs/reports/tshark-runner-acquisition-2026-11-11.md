@@ -65,3 +65,11 @@ now-obsolete authored mirror-policy checks; no original product test is removed.
 They retain incorrect/oversize/truncated/existing-file refusal and prohibit
 network/process execution on an ordinary PC. All current hosted checks and the
 actual independent golden comparison remain required before merge.
+
+The first Windows attempt downloaded the exact reviewed MSI, then stopped before
+administrative extraction: the legacy Windows PowerShell child could not autoload
+`Microsoft.PowerShell.Security` in the runner environment. Its signature check
+failed closed. The check now uses the runner's native PowerShell7 executable,
+with the same required valid signature and exact publisher; it does not remove
+signature validation or modify the host's module path. Fresh results remain
+required before this draft is merged.

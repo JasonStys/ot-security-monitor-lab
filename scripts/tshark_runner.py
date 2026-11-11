@@ -96,7 +96,7 @@ def main() -> None:
         verified_copy(response, package, SIZE, SHA256)
     subprocess.run(
         [
-            "powershell.exe",
+            "pwsh.exe",
             "-NoProfile",
             "-NonInteractive",
             "-File",

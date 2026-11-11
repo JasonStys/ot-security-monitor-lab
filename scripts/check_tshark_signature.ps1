@@ -1,4 +1,5 @@
 # Jason Stys: require original signed Wireshark provider before hosted-only administrative extraction.
+# Parameters: Package@L3. Variables: ErrorActionPreference@L4, taskSignature@L6. No functions.
 param([Parameter(Mandatory = $true)][string]$Package)
 $ErrorActionPreference = 'Stop'
 if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_OS -ne 'Windows') { throw 'Hosted Windows only.' }
