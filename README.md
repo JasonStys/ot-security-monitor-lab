@@ -136,6 +136,7 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [requirements-native.lock](requirements-native.lock) | Exact hash-locked portable freezing tools, separate from zero-dependency runtime. |
 | [scripts/benchmark.py](scripts/benchmark.py) | Jason Stys: bounded synthetic passive-monitor benchmark, not an industrial-network throughput guarantee. |
 | [scripts/build\_native.py](scripts/build_native.py) | Build the complete real offline workbench as one Windows portable executable. Jason Stys. |
+| [scripts/check\_tshark\_signature.ps1](scripts/check_tshark_signature.ps1) | Jason Stys: require original signed Wireshark provider before hosted-only administrative extraction. |
 | [scripts/code\_map.py](scripts/code_map.py) | Jason Stys: exact Python AST definition/parameter/variable maps and lexical Bash/workflow line indexes. |
 | [scripts/evaluate.py](scripts/evaluate.py) | Jason Stys: exact independent scenario-oracle evaluation and private local analyst-report export. |
 | [scripts/file\_guide.py](scripts/file_guide.py) | Jason Stys: exact tracked-file README purpose inventory, unknown files fail rather than receive guesses. |
@@ -147,6 +148,7 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [scripts/publication\_text.py](scripts/publication_text.py) | Jason Stys: inspect only named reviewed Office editions without hiding their XML. |
 | [scripts/scanners.py](scripts/scanners.py) | Install only hash-pinned official Linux scanner binaries. Created by Jason Stys. |
 | [scripts/test\_native\_app.py](scripts/test_native_app.py) | Run the real frozen workbench twice with an owned synthetic profile and exact bundle persistence. Jason Stys. |
+| [scripts/tshark\_runner.py](scripts/tshark_runner.py) | Jason Stys: verify and administratively extract a pinned official offline dissector on a disposable Windows runner only. |
 | [scripts/validate\_repo.py](scripts/validate_repo.py) | Jason Stys: tracked-file privacy, passive-runtime imports and zero-artifact/cache workflow guards. |
 | [sql/evidence.sql](sql/evidence.sql) | Jason Stys: atomic offline analysis evidence, keyed idempotency and indexed analyst rule lookup. |
 | [tests/conftest.py](tests/conftest.py) | Jason Stys: synthetic policy and capture fixtures, no private OT/network data. |
@@ -163,9 +165,9 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [tests/test\_profile\_admission.py](tests/test_profile_admission.py) | Actual pre-existing alias refusal and ordinary SQLite recovery continuity. Jason Stys. |
 | [tests/test\_protocol.py](tests/test_protocol.py) | Jason Stys: independent hex/field protocol vectors, extreme quantities and structured/random fuzzing. |
 | [tests/test\_publication\_text.py](tests/test_publication_text.py) | Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content. |
-| [tests/test\_runner\_network\_policy.py](tests/test_runner_network_policy.py) | Actual TShark-job policy mutants for signed disposable-runner acquisition. Jason Stys. |
 | [tests/test\_scenarios.py](tests/test_scenarios.py) | Jason Stys: exact manual scenario oracles, including no-finding baselines and subtle visibility failures. |
 | [tests/test\_transport.py](tests/test_transport.py) | Jason Stys: conservative TCP overlap/gap/SYN/FIN/reset/sequence-wrap and state-cap regressions. |
+| [tests/test\_tshark\_runner.py](tests/test_tshark_runner.py) | Jason Stys: real bounded package files and fail-closed hosted-only independent-dissector setup. |
 | [tools.lock.json](tools.lock.json) | Official Linux scanner versions, URLs and SHA256 digests. |
 
 <!-- END FILE GUIDE -->
