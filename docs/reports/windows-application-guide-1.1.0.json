@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "repository": "ot-security-monitor-lab",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "b9ec245296cb5900e98d490ca52641b02522dee8",
+  "createdAt": "2026-11-11T12:54:16.454Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide-1.1.0.docx",
+  "sha256": "f8d885ee9cc54260a3551003fd66ffc943796aa853be1916d3845a60cf15ceaa",
+  "screenshots": [
+    {
+      "file": "owner-unknown-review.png",
+      "sha256": "612cf05b633685cdadc82748e6603dbe75e132c7cefcec636e72d54892dc83a4",
+      "width": 1276,
+      "height": 899,
+      "caption": "The installed app shows explicit register observation intervals: two of four addresses observed in one span and zero of four in another. These are capture observations, not verified device state."
+    },
+    {
+      "file": "selected-evidence.png",
+      "sha256": "86f7b396522afddc248ae2701dfd7efcd4b827ddd4e14454d4bbc94bae5a0b3a",
+      "width": 1276,
+      "height": 899,
+      "caption": "The installed evidence view retains source-bound details, original protocol scope and human review context; search changes presentation rather than underlying capture evidence."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "otmon/desktop_project.py",
+      "first": 163,
+      "last": 186,
+      "sha256": "b0d4d1d45884439dbb5a8f47492a06645e4f9d5725cae3bda23e96221e34f86a",
+      "url": "https://github.com/JasonStys/ot-security-monitor-lab/blob/b9ec245296cb5900e98d490ca52641b02522dee8/otmon/desktop_project.py#L163"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Actual installed native journeys",
+      "observed": "Two installed launches passed nine workflows, nine exact saved bundles, invalid-input preservation and normal exits.",
+      "result": "Passed"
+    },
+    {
+      "name": "Original engines and security",
+      "observed": "Original TCP/Modbus parsing and coverage tests, source/privacy checks, actual TShark interoperability where configured and processed CodeQL passed on exact main.",
+      "result": "Passed"
+    },
+    {
+      "name": "Package and runtime identity",
+      "observed": "Five independently downloaded assets matched provider SHA-256. Actual installed bytes and source/runtime identities matched the reviewed clean-main proof.",
+      "result": "Passed"
+    },
+    {
+      "name": "Launch and privacy boundary",
+      "observed": "Individual Desktop and Start-menu link targets passed read-back. Installed EXEs were exercised separately with synthetic profiles; normal default-profile shortcut activation was not independently exercised.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "reviewer": "audit_cyber",
+    "ooxmlSchema": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "sha256": "654bcc22249292fa4ac2eaafea2a263ceed59fe167921c85ae9a3f2d1be743b7"
+      },
+      {
+        "page": 2,
+        "sha256": "d5f4a7c71874f870c50f5a4a5267159e16d58d95f4c1a90846208839957c1023"
+      },
+      {
+        "page": 3,
+        "sha256": "6b1cef76a7ad5316610fe35899ba07785ce7ff424803244e79c00e0052bfe63a"
+      },
+      {
+        "page": 4,
+        "sha256": "6b801c7af2b0b696a25639299afd7c2375e7f3f8ee6ea94b43abd8581cb66c02"
+      }
+    ],
+    "scope": "Every final page individually reviewed; only exact identical pixel hashes carry prior inspection. Screenshots show actual installed synthetic workflows.",
+    "checkedUtc": "2026-11-11T13:36:06.861445+00:00"
+  }
+}

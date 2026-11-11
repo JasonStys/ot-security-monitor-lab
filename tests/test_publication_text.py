@@ -11,24 +11,24 @@ These tests verify documentation input handling, not application-runtime behavio
 # parameter: text — line 43
 # variable: path — line 46
 # variable: package — line 48
-# definition: test_named_office_xml_remains_visible — line 65
-# parameter: main — line 65
-# parameter: name — line 65
-# parameter: tmp_path — line 65
-# variable: text — line 67
-# definition: test_unknown_binary_is_not_an_exclusion — line 71
-# parameter: tmp_path — line 71
-# variable: path — line 73
-# definition: test_missing_document_root_is_rejected — line 78
-# parameter: tmp_path — line 78
-# definition: test_invalid_zip_is_rejected — line 86
-# parameter: tmp_path — line 86
-# variable: path — line 88
-# definition: test_invalid_utf8_xml_is_rejected — line 95
-# parameter: tmp_path — line 95
-# definition: test_expansion_budget_is_active — line 104
-# parameter: tmp_path — line 104
-# variable: path — line 106
+# definition: test_named_office_xml_remains_visible — line 66
+# parameter: main — line 66
+# parameter: name — line 66
+# parameter: tmp_path — line 66
+# variable: text — line 68
+# definition: test_unknown_binary_is_not_an_exclusion — line 72
+# parameter: tmp_path — line 72
+# variable: path — line 74
+# definition: test_missing_document_root_is_rejected — line 79
+# parameter: tmp_path — line 79
+# definition: test_invalid_zip_is_rejected — line 87
+# parameter: tmp_path — line 87
+# variable: path — line 89
+# definition: test_invalid_utf8_xml_is_rejected — line 96
+# parameter: tmp_path — line 96
+# definition: test_expansion_budget_is_active — line 105
+# parameter: tmp_path — line 105
+# variable: path — line 107
 # END CODE MAP
 
 from pathlib import Path
@@ -58,6 +58,7 @@ def edition(
     "name,main",
     [
         ("project-guide.docx", "word/document.xml"),
+        ("windows-application-guide-1.1.0.docx", "word/document.xml"),
         ("validation-review.docx", "word/document.xml"),
         ("validation-evidence.xlsx", "xl/workbook.xml"),
     ],

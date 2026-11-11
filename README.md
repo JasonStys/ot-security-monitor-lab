@@ -96,12 +96,15 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
 | [docs/reports/evaluation.json](docs/reports/evaluation.json) | Actual independent synthetic scenario detection/capture-integrity outcomes. |
 | [docs/reports/example.html](docs/reports/example.html) | Generated inert public synthetic analyst report; no real capture data. |
+| [docs/reports/installed-windows-1.1.0-2026-11-11.md](docs/reports/installed-windows-1.1.0-2026-11-11.md) | Installed Windows 1.1.0 validation — 11 November 2026. |
 | [docs/reports/native-workbench-2026-11-11.md](docs/reports/native-workbench-2026-11-11.md) | Native offline workbench validation — 2026-11-11. |
 | [docs/reports/native.json](docs/reports/native.json) | Actual independent TShark dissection of synthetic segmented Modbus traffic. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed source-bound Word guide with dated validation observations and practical limits. |
 | [docs/reports/publications.json](docs/reports/publications.json) | Exact publication hashes, reviewed page identities and source/evidence baselines. |
 | [docs/reports/read-coverage-2026-11-09.md](docs/reports/read-coverage-2026-11-09.md) | Passive read observation coverage validation — November 9, 2026. |
+| [docs/reports/windows-application-guide-1.1.0.docx](docs/reports/windows-application-guide-1.1.0.docx) | Current illustrated installed workbench guide with actual screenshots, exact source and measured limits. |
+| [docs/reports/windows-application-guide-1.1.0.json](docs/reports/windows-application-guide-1.1.0.json) | Current Word, screenshot, immutable source and reviewed-page digests. |
 | [docs/research.md](docs/research.md) | Primary-source research. |
 | [docs/review.md](docs/review.md) | Implementation review and debugging record. |
 | [docs/runbook.md](docs/runbook.md) | Operational review and release runbook. |
@@ -170,3 +173,8 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx).
 
 [Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
+
+
+## Current Windows application guide
+
+The published **1.1.0** app has a [four-page illustrated guide](docs/reports/windows-application-guide-1.1.0.docx) with actual installed screenshots, a worked user journey, source excerpts and operating limits. Read the [installed validation report](docs/reports/installed-windows-1.1.0-2026-11-11.md) and [review manifest](docs/reports/windows-application-guide-1.1.0.json) for exact scope. Historical editions remain unchanged.
