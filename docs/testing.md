@@ -26,3 +26,7 @@ python -m pip_audit -r requirements-dev.lock --disable-pip --no-deps
 ```
 
 Native TShark is installed only on a disposable GitHub Ubuntu runner through signed distro packages and used with explicit -r. Its actual version is recorded; no local Wireshark/capture-driver installation is required. No CI artifact upload/cache steps.
+
+## Actual Windows portable acceptance
+
+The new Windows job builds the complete patched Python/Tk portable and invokes `scripts/test_native_app.py`. It drives nine real workflows, external supported input selection, independently stated domain oracles, visible minimum layout, original details, actual notices, exact export and invalid-input preservation; a second actual process must reopen all nine exact bundles and both owned PIDs must exit. Presentation-unit doubles do not establish native UI behavior. Source tests exercise actual core semantics, hardlink/nonregular fixed-state admission, ordinary WAL/hot-journal recovery and stable bounded input reads. All original tests, coverage floors, benchmarks and independent native lanes remain mandatory. No local Docker/live collector is invoked; exact later hosted outcomes must be checked, not inferred from source or historical Office editions.

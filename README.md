@@ -22,6 +22,12 @@ This is a documented learning/assurance lab, not a production IDS, universal ind
 | Explainable local evidence | Fixed reason/severity/basis, packet/time/flow/hash references; idempotent parameterized SQLite, JSON and inert escaped HTML. |
 | Independent assurance | Hand-authored scenario oracles, property tests, cross-platform coverage/types/scans and separate native TShark wire-field checks. |
 
+## Native Windows workbench
+
+**OT Security Monitor Workbench 1.1.0** turns the existing offline engine into a complete one-file graphical application: real supported file/policy settings, meaningful evidence views, literal search/full details, bounded durable history, exact export, explicit retention controls and normal retained-worker close. Analyze authorized classic-PCAP files and chosen asset/register/maintenance policies through the original conservative TCP/Modbus engine. Inspect original detections, request/response frames, exact matched reads, separate FC03/FC04 intervals and unfiltered capture caveats.
+
+Nine prepared/acceptance workflows run inside this same application. They are optional inputs, not a separate demo or substitute for authorized files. The portable includes patched Python/Tk and fixed resources; no separate development tools or Docker are needed to use it. The existing CLI and real native assurance lanes remain available. [Application guide](docs/native-workbench.md) · [Actual dated validation](docs/reports/native-workbench-2026-11-11.md). Source/build, hosted validation, release publication and PC installation are distinct operations; this source change does not claim an unrun later release.
+
 ## Quick start
 
 Python 3.12+; runtime uses only the standard library (SQLite 3.37+). Clone or download this repo; no Docker/admin/network-capture permission is needed.
@@ -75,6 +81,7 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [.github/workflows/ci.yml](.github/workflows/ci.yml) | Jason Stys: cross-platform passive monitoring, independent offline TShark and audited tools; zero artifacts/caches. |
 | [.github/workflows/codeql.yml](.github/workflows/codeql.yml) | Jason Stys: security-extended Python analysis; explicitly disable trap/dependency caches and database uploads. |
 | [.gitignore](.gitignore) | Exclude captured traffic, local databases, reports, credentials and tool caches. |
+| [CHANGELOG.md](CHANGELOG.md) | Changelog. |
 | [LICENSE](LICENSE) | MIT license for Jason Stys's authored code. |
 | [README.md](README.md) | OT Security Monitor Lab. |
 | [docs/architecture.md](docs/architecture.md) | Architecture and ADR 001 — passive OT assurance. |
@@ -82,12 +89,14 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [docs/contracts.md](docs/contracts.md) | Input, state and evidence contracts. |
 | [docs/detections.md](docs/detections.md) | Detection catalog and interpretation. |
 | [docs/handbook.md](docs/handbook.md) | OT Security Monitor Lab handbook. |
+| [docs/native-workbench.md](docs/native-workbench.md) | OT Security Monitor Workbench: Windows application. |
 | [docs/performance.md](docs/performance.md) | Complexity and benchmark methodology. |
 | [docs/reports/benchmark.json](docs/reports/benchmark.json) | Measured bounded capture analysis and Python allocation peak. |
 | [docs/reports/ci.json](docs/reports/ci.json) | Actual immutable accepted-source CI snapshot. |
 | [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
 | [docs/reports/evaluation.json](docs/reports/evaluation.json) | Actual independent synthetic scenario detection/capture-integrity outcomes. |
 | [docs/reports/example.html](docs/reports/example.html) | Generated inert public synthetic analyst report; no real capture data. |
+| [docs/reports/native-workbench-2026-11-11.md](docs/reports/native-workbench-2026-11-11.md) | Native offline workbench validation — 2026-11-11. |
 | [docs/reports/native.json](docs/reports/native.json) | Actual independent TShark dissection of synthetic segmented Modbus traffic. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed source-bound Word guide with dated validation observations and practical limits. |
@@ -108,29 +117,46 @@ Earlier baseline evidence: 130 tests on every OS, 100% runtime coverage, 27 exac
 | [otmon/cli.py](otmon/cli.py) | Jason Stys: explicit offline PCAP analysis CLI, private output and no active capture/scanning interfaces. |
 | [otmon/contracts.py](otmon/contracts.py) | Jason Stys: strict bounded asset/register/maintenance policy and fixed-message input validation. |
 | [otmon/coverage.py](otmon/coverage.py) | Jason Stys: passive matched-read observation coverage, preserving asset/unit and register-space boundaries. |
+| [otmon/desktop.py](otmon/desktop.py) | Native offline workbench: real project inputs, analysis, searchable evidence, history and export. Jason Stys. |
+| [otmon/desktop\_io.py](otmon/desktop_io.py) | Bounded regular descriptor reads and strict finite JSON for owner-local desktop state. Jason Stys. |
+| [otmon/desktop\_project.py](otmon/desktop_project.py) | Actual passive PCAP, policy and register-observation workflows for the native workbench. Jason Stys. |
+| [otmon/desktop\_state.py](otmon/desktop_state.py) | Owner-local desktop profile, bounded durable bundles and non-overwriting export. Jason Stys. |
 | [otmon/evidence.py](otmon/evidence.py) | Jason Stys: parameterized idempotent SQLite evidence and script-free escaped HTML report exports. |
+| [otmon/inputs.py](otmon/inputs.py) | Bounded stable ordinary-file reads and streaming tool hashes for offline identity inputs. Jason Stys. |
 | [otmon/monitor.py](otmon/monitor.py) | Jason Stys: passive explainable OT detections, bounded correlation and explicit capture visibility limits. |
 | [otmon/protocol.py](otmon/protocol.py) | Jason Stys: bounded Modbus/TCP ADU decoder for FC03/04/06/16 and explicit unsupported-code visibility. |
 | [otmon/transport.py](otmon/transport.py) | Jason Stys: conservative bounded TCP sequence tracking and Modbus boundary extraction, no active sockets. |
 | [pyproject.toml](pyproject.toml) | Jason Stys: zero-dependency passive runtime, strict types and combined statement/branch coverage. |
 | [requirements-dev.in](requirements-dev.in) | Jason Stys: hash-locked tests, properties, typing, formatting and independent dependency/security tooling. |
 | [requirements-dev.lock](requirements-dev.lock) | Universal complete hash-locked test and security-tool graph. |
+| [requirements-native.lock](requirements-native.lock) | Exact hash-locked portable freezing tools, separate from zero-dependency runtime. |
 | [scripts/benchmark.py](scripts/benchmark.py) | Jason Stys: bounded synthetic passive-monitor benchmark, not an industrial-network throughput guarantee. |
+| [scripts/build\_native.py](scripts/build_native.py) | Build the complete real offline workbench as one Windows portable executable. Jason Stys. |
 | [scripts/code\_map.py](scripts/code_map.py) | Jason Stys: exact Python AST definition/parameter/variable maps and lexical Bash/workflow line indexes. |
 | [scripts/evaluate.py](scripts/evaluate.py) | Jason Stys: exact independent scenario-oracle evaluation and private local analyst-report export. |
 | [scripts/file\_guide.py](scripts/file_guide.py) | Jason Stys: exact tracked-file README purpose inventory, unknown files fail rather than receive guesses. |
 | [scripts/native.py](scripts/native.py) | Jason Stys: offline independent TShark golden-vector agreement; no live capture, device access or sockets. |
+| [scripts/native\_acceptance.py](scripts/native_acceptance.py) | Actual final portable widgets/core/native-window acceptance with independent oracles. Jason Stys. |
+| [scripts/native\_common.py](scripts/native_common.py) | Actual patched Python/Tcl/Tk/PyInstaller runtime notices and authored portable icon. Jason Stys. |
+| [scripts/native\_entry.py](scripts/native_entry.py) | Launch the actual bundled offline project workbench; no setup shell commands. Jason Stys. |
 | [scripts/preview.py](scripts/preview.py) | Jason Stys: temporary loopback-only inert synthetic HTML preview for visual QA, not a hosted OT service. |
 | [scripts/publication\_text.py](scripts/publication_text.py) | Jason Stys: inspect only named reviewed Office editions without hiding their XML. |
 | [scripts/scanners.py](scripts/scanners.py) | Install only hash-pinned official Linux scanner binaries. Created by Jason Stys. |
+| [scripts/test\_native\_app.py](scripts/test_native_app.py) | Run the real frozen workbench twice with an owned synthetic profile and exact bundle persistence. Jason Stys. |
 | [scripts/validate\_repo.py](scripts/validate_repo.py) | Jason Stys: tracked-file privacy, passive-runtime imports and zero-artifact/cache workflow guards. |
 | [sql/evidence.sql](sql/evidence.sql) | Jason Stys: atomic offline analysis evidence, keyed idempotency and indexed analyst rule lookup. |
 | [tests/conftest.py](tests/conftest.py) | Jason Stys: synthetic policy and capture fixtures, no private OT/network data. |
 | [tests/test\_capture.py](tests/test_capture.py) | Jason Stys: classic PCAP endianness/resolution, truncation, layer visibility and adversarial length fuzzing. |
 | [tests/test\_contracts.py](tests/test_contracts.py) | Jason Stys: strict policy types, duplicates, intervals, roles and privacy/resource boundary tests. |
 | [tests/test\_coverage.py](tests/test_coverage.py) | Jason Stys: independent successful-read coverage and incomplete-observation regression oracles. |
+| [tests/test\_desktop\_gui.py](tests/test_desktop_gui.py) | Presentation-adapter unit tests with real core/SQLite workers; real widgets are separately frozen-tested. Jason Stys. |
+| [tests/test\_desktop\_io.py](tests/test_desktop_io.py) | Private state JSON and bounded descriptor-read boundary cases with actual file bytes. Jason Stys. |
+| [tests/test\_desktop\_project.py](tests/test_desktop_project.py) | Independent passive-capture GUI adapter oracles, threshold provenance and exact retained evidence. Jason Stys. |
+| [tests/test\_desktop\_state.py](tests/test_desktop_state.py) | Independent offline desktop ownership, byte-bound, SQLite and non-overwrite regressions. Jason Stys. |
 | [tests/test\_evidence\_cli.py](tests/test_evidence_cli.py) | Jason Stys: real CLI/export/SQLite lifecycle, idempotency/conflict rollback and inert report escaping. |
 | [tests/test\_monitor.py](tests/test_monitor.py) | Jason Stys: bounded analyst-state, exact connection correlation, reset/maintenance and rate-boundary tests. |
+| [tests/test\_native\_inputs.py](tests/test_native_inputs.py) | Actual same-descriptor input bounds and ownership-change cases for selected offline reports. Jason Stys. |
+| [tests/test\_profile\_admission.py](tests/test_profile_admission.py) | Actual pre-existing alias refusal and ordinary SQLite recovery continuity. Jason Stys. |
 | [tests/test\_protocol.py](tests/test_protocol.py) | Jason Stys: independent hex/field protocol vectors, extreme quantities and structured/random fuzzing. |
 | [tests/test\_publication\_text.py](tests/test_publication_text.py) | Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content. |
 | [tests/test\_scenarios.py](tests/test_scenarios.py) | Jason Stys: exact manual scenario oracles, including no-finding baselines and subtle visibility failures. |

@@ -4,27 +4,27 @@
 # variable: BEGIN — line 36
 # variable: END — line 36
 # variable: SPECIAL — line 37
-# definition: purpose — line 54
-# parameter: name — line 54
-# variable: text — line 58
-# variable: lines — line 63
-# variable: index — line 64
-# variable: line — line 64
-# variable: description — line 66
-# variable: continuation — line 68
-# variable: description — line 74
-# definition: main — line 79
-# variable: parser — line 81
-# variable: args — line 83
-# variable: names — line 84
-# variable: rows — line 92
-# variable: name — line 93
-# variable: label — line 94
-# variable: path — line 96
-# variable: original — line 97
-# variable: end — line 98
-# variable: start — line 98
-# variable: expected — line 99
+# definition: purpose — line 55
+# parameter: name — line 55
+# variable: text — line 59
+# variable: lines — line 64
+# variable: index — line 65
+# variable: line — line 65
+# variable: description — line 67
+# variable: continuation — line 69
+# variable: description — line 75
+# definition: main — line 80
+# variable: parser — line 82
+# variable: args — line 84
+# variable: names — line 85
+# variable: rows — line 93
+# variable: name — line 94
+# variable: label — line 95
+# variable: path — line 97
+# variable: original — line 98
+# variable: end — line 99
+# variable: start — line 99
+# variable: expected — line 100
 # END CODE MAP
 
 import argparse
@@ -35,6 +35,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BEGIN, END = "<!-- BEGIN FILE GUIDE -->", "<!-- END FILE GUIDE -->"
 SPECIAL = {
+    "requirements-native.lock": "Exact hash-locked portable freezing tools, separate from zero-dependency runtime.",
     "docs/reports/project-guide.docx": "Reviewed source-bound Word guide with dated validation observations and practical limits.",
     "docs/reports/publications.json": "Exact publication hashes, reviewed page identities and source/evidence baselines.",
     ".gitignore": "Exclude captured traffic, local databases, reports, credentials and tool caches.",

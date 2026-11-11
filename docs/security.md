@@ -19,3 +19,9 @@ Not a production IDS/IPS, government authorization/certification, packet authent
 A zero-finding capture can still be incomplete/unsupported. Byte integrity hashes do not prove who sent a packet. Source IP is a label, not authentication. Baseline/envelope/timeout quality determines false-positive/false-negative behavior. Control engineers and operators must interpret findings alongside process history and change logs. Do not disrupt OT systems based solely on these outputs.
 
 Report vulnerabilities privately via [Jason Stys GitHub/contact](https://github.com/JasonStys) or [LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/). Do not post private captured data, credentials or production details publicly.
+
+## Desktop inputs, state and lifecycle
+
+No socket, capture driver, packet transmission, scan, process launch, device query, PLC write or enforcement path exists in the GUI runtime. IP peer labels are not authentication. Unsupported/incomplete captures remain explicit, and unobserved intervals do not prove device failure, mandatory polling or physical-process safety. Only the original documented classic-PCAP/Modbus profile is implemented.
+
+Stable descriptor reads reject linked/nonregular inputs and detect replacement/growth. Profile admission checks all fixed mutable slots before writes and keeps genuine recovery sidecars. One owner lock remains held while analysis and save drain; no ordinary close abandons a thread. Profiles/exports are private plaintext OS-owner state. Treat imported observations, clocks and dispositions as assertions rather than authenticated provenance. Runtime resource/DLL hashes bind package bytes to recorded source metadata; they are not publisher signing or security certification.

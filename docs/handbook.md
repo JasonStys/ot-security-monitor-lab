@@ -56,3 +56,7 @@ The reviewed source is [`88a34d59e7433aeba3e47066840274666fa7f8c3`](https://gith
 ## Maintaining these editions
 
 Update the editable usage/design/test documents first. Rebuild and visually review every Word page and workbook tab before replacing an edition; verify the exact binary digests and evidence source in publications.json. Keep account data, logs with secrets, installed-app state and private test stores out of documentation. Source and release assets retain their existing security and licensing boundaries.
+
+## Current native usage
+
+Use the [Windows application guide](native-workbench.md) for actual desktop inputs, original-engine interpretation, profile privacy, lifecycle and developer packaging. The [dated native validation](reports/native-workbench-2026-11-11.md) separates working-tree measurements from later exact clean-source and hosted outcomes. Older downloadable Office editions retain their documented historical source; they are not rewritten by this implementation.
